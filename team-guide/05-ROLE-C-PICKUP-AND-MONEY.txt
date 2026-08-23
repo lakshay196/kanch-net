@@ -1,0 +1,117 @@
+KANCH-NET — YOUR ROLE: PERSON C (PICKUP + FAKE MONEY)
+You make pickup, quality check, and the fake money page.
+
+Lead uses Cursor. You use ChatGPT (teacher) + Antigravity (code).
+You work in the lead’s GitHub folder. You do not make a new app.
+
+--------------------------------------------------
+YOUR JOB
+--------------------------------------------------
+
+Pickup: type B-001, collected quantity, ok or damaged.
+Quality: accepted / rejected / damaged + reason (broken, wrong colour, …).
+Fake money: table. Only accepted pieces × 8 rupees, then 5% fee.
+Giant banner: SIMULATED — NOT REAL MONEY
+No GPay-looking Pay button.
+
+--------------------------------------------------
+WHO HELPS YOU / WHO YOU HELP
+--------------------------------------------------
+
+Lead: pile names already exist.
+Person B later: which piles are in the order.
+You help the demo: broken pieces are not paid.
+You do not wait. Use the starter list today.
+
+--------------------------------------------------
+DONE WHEN
+--------------------------------------------------
+
+One pile: written down → picked up → accepted/rejected, and money uses accepted only.
+Example: 200 declared, 180 accepted → pay 180.
+
+--------------------------------------------------
+EASY VERSION
+--------------------------------------------------
+
+No camera. Type B-001. Two forms + one table.
+
+--------------------------------------------------
+HOW TO USE THE TWO AIS
+--------------------------------------------------
+
+ChatGPT left, Antigravity right.
+YELLOW BOX 1 first (setup). Then YELLOW BOX 2. Then ANTIGRAVITY BOX.
+Only edit app/pickup and app/money.
+
+--------------------------------------------------
+YELLOW BOX 1 — PASTE IN CHATGPT FIRST
+(setup GitHub + Antigravity. I am a beginner.)
+--------------------------------------------------
+
+I am Person C on a student team. I am a beginner. I have never used GitHub or Antigravity (or I have used them very little).
+
+The team lead sent me:
+- two files: 01-EVERYONE-READ-THIS.txt and this Person C role file
+- a GitHub link I will paste here: PASTE_THE_GITHUB_LINK_HERE
+
+I must use the lead’s project. I must NOT create a new empty project.
+
+Please be my teacher. Simple English. One click at a time, like I am 15.
+
+Help me:
+1) GitHub account if needed
+2) Accept the invite
+3) Install Antigravity from antigravity.google if needed
+4) Clone the GitHub link
+5) Open the kanch-net folder in Antigravity — not a new project
+6) Pull before every work session
+7) ChatGPT on one half, Antigravity on the other
+8) When setup is done, tell me to paste YELLOW BOX 2
+
+Wait for screenshots. Do not tell me to start a new app.
+
+--------------------------------------------------
+YELLOW BOX 2 — PASTE IN CHATGPT AFTER THE FOLDER IS OPEN
+--------------------------------------------------
+
+I am Person C. kanch-net is already open in Antigravity. I am a beginner.
+I make pickup, quality, and fake money in app/pickup and app/money.
+
+Please be my teacher:
+1) Small steps
+2) What to paste into Antigravity
+3) Easy version: type pile name, no camera
+4) Money = accepted × 8, then 5% fee. Rejected = 0. Never use declared quantity for money
+5) Do not let me build voice or matching
+
+--------------------------------------------------
+ANTIGRAVITY BOX — PASTE ONLY AFTER KANCH-NET FOLDER IS OPEN
+--------------------------------------------------
+
+I am Person C. This folder is the team GitHub project kanch-net. Do not create a new project.
+
+Work ONLY in app/pickup and app/money. Do not edit phone, matching, login, or data/starter-list.json.
+
+Pickup:
+- box to type batch id like B-001 (no camera required)
+- collected quantity, condition ok or damaged
+- status becomes collected
+
+Quality (can be on the same page):
+- accepted, rejected, damaged quantities
+- reasons: wrong colour, wrong size, broken, short quantity, packing, duplicate id
+
+Money page:
+- keep the SIMULATED — NOT REAL MONEY banner
+- acceptedQty * 8 = gross
+- fee = 5% of gross
+- family gets gross minus fee
+- material = 0
+- if accepted is empty, pay 0
+- NEVER pay using declared or collected quantity
+- 25% booking is only a note. It does not pay all families.
+- No UPI, no real payments.
+
+Before you edit: pull. After: tell me how to push only my files.
+Piles B-011 and B-016 already have accepted numbers for a first demo.

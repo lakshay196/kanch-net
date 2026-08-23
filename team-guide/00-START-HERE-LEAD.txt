@@ -1,0 +1,72 @@
+KANCH-NET — FOR YOU (TEAM LEAD)
+Read this first. Do not give this file to the whole group.
+
+YOU use Cursor (this chat / Grok). You do NOT use Antigravity.
+Your 3 builders use ChatGPT + Antigravity.
+Your 2 presentation people use ChatGPT only. No code.
+
+Your job:
+1. Make the empty website in Cursor (login + empty pages + starter list) — this is already started in this repo
+2. Put it on GitHub and invite A, B, C
+3. Send each person 2 files + the GitHub link
+4. Help if they get stuck
+5. At the end, click the full demo
+
+You are not Person B. Do not build matching, phone, or money for them unless they are totally stuck at the last hour.
+
+--------------------------------------------------
+WHAT THE APP IS (say this in one breath)
+--------------------------------------------------
+
+Home workers in Firozabad make small piles of glass bangles.
+A big buyer wants one huge pile that all looks the same.
+Our app helps a local group write piles down, keep only matching ones, check them, and show FAKE money.
+
+--------------------------------------------------
+WHAT YOU SEND EACH PERSON
+--------------------------------------------------
+
+Builders (A, B, C) get:
+1) team-guide/01-EVERYONE-READ-THIS.txt
+2) THEIR role file
+3) the GitHub link (after you invite them)
+
+They put files 1 and 2 into ChatGPT.
+They paste the YELLOW BOX (setup) first, then the second yellow box (their work).
+They paste the ANTIGRAVITY BOX into Antigravity AFTER the folder is open.
+
+Presentation pair get:
+1) 01-EVERYONE-READ-THIS.txt
+2) 06-ROLE-PRESENTATION.txt
+No GitHub clone needed unless they want screenshots later.
+
+Copy WhatsApp texts from 07-WHATSAPP-MESSAGES.txt
+
+--------------------------------------------------
+GITHUB — WHAT YOU DO
+--------------------------------------------------
+
+1. Repo is public (so sharing is easy).
+2. Invite A, B, C as collaborators (GitHub → Settings → Collaborators).
+3. WhatsApp the repo link. Example look: https://github.com/YOURNAME/kanch-net
+4. Tell them: accept the invite in email, then clone THIS project. Do not make a new empty project.
+
+You do not teach a Git class.
+If someone fails Git twice: they zip their folder and send you. You put it in.
+
+--------------------------------------------------
+WHAT “DONE” MEANS FOR YOU
+--------------------------------------------------
+
+In 3 minutes you can click:
+1. Login 9000000001 / 1234
+2. Family adds a red pile (Person A)
+3. Blue pile is out, with a reason (Person B)
+4. Pickup + some pieces rejected (Person C)
+5. Fake money pays only accepted pieces, big SIMULATED banner
+
+--------------------------------------------------
+NEVER PROMISE
+--------------------------------------------------
+
+Real UPI, Aadhaar, or “we pay everyone from 25% booking”.

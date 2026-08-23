@@ -1,0 +1,131 @@
+KANCH-NET — EVERYONE READ THIS
+This file is for the whole team. It is not a coding lesson.
+Builders: send this file + your role file to ChatGPT.
+
+--------------------------------------------------
+WHAT WE ARE MAKING
+--------------------------------------------------
+
+20 families. Each made a small pile of glass bangles at home.
+A shop wants 10,000 bangles that are ALL red, size 2-6, same shiny look.
+
+Our app:
+- families tell the phone what they made
+- the app keeps matching piles and says why a pile is rejected
+- a collector picks up the goods
+- a checker says how many pieces are actually good
+- a fake money page shows what each family would get
+
+We are NOT making real payments, Amazon, or Aadhaar.
+
+--------------------------------------------------
+WHO DOES WHAT
+--------------------------------------------------
+
+LEAD — uses Cursor, not Antigravity
+- Already made the empty website, login, and starter list
+- Puts the project on GitHub and invites you
+- Helps if you are stuck
+- Clicks the demo at the end
+
+PERSON A — PHONE (ChatGPT + Antigravity)
+- Home-worker screens. Big buttons. Talk or type. My piles list.
+
+PERSON B — MATCHING (ChatGPT + Antigravity)
+- Order card. IN list and OUT list with a simple reason.
+
+PERSON C — PICKUP + FAKE MONEY (ChatGPT + Antigravity)
+- Pickup tick-list, quality check, fake payment table.
+
+PRESENTATION PAIR — ChatGPT only
+- Slides and speech. No Antigravity. No code.
+
+--------------------------------------------------
+THE ONE STORY
+--------------------------------------------------
+
+1. Buyer wants 10,000 red size 2-6 bangles. Order: ORD-001
+2. Family 1 and 2 log red bangles. OK.
+3. Family 3 logs blue. Screen must say colour is blue, buyer wants red.
+4. Collector picks up the red piles.
+5. Quality: pile 1 fully good. Pile 2 some broken.
+6. Fake money pays only good pieces. Screen says SIMULATED.
+
+Do not invent a second story.
+
+--------------------------------------------------
+NUMBERS WE ALL USE (do not change)
+--------------------------------------------------
+
+Red glass bangle, size 2-6, shiny, grade B
+Buyer 10 rupees, family 8 rupees, group fee 5%, broken = 0
+Login code: 1234
+
+9000000001 family 1
+9000000002 family 2
+9000000003 family 3 (the blue one)
+9000000010 collector
+9000000020 matching person
+9000000030 buyer
+
+Pile names: B-001, B-002, ...
+
+--------------------------------------------------
+HOW YOU WORK AT THE SAME TIME
+--------------------------------------------------
+
+Do not wait for each other. The starter list is already in the project.
+
+Lead helps everyone (GitHub + unstuck).
+A helps B later (new piles).
+B helps C later (which piles are in the order).
+C helps the demo (pickup → fake money).
+Presentation pair take screenshots at the end.
+
+Do not edit another person’s folder. See WHO-OWNS-WHAT.txt
+
+--------------------------------------------------
+CHATGPT vs ANTIGRAVITY
+--------------------------------------------------
+
+ChatGPT = teacher. Keep it open on one side of the screen.
+Antigravity = writes code in the kanch-net folder. Other side of the screen.
+
+Never let Antigravity “make a new app” or “redesign everything”.
+
+--------------------------------------------------
+FIRST TIME: GITHUB + ANTIGRAVITY
+(builders A, B, C — do this before any coding)
+--------------------------------------------------
+
+The lead will send you a GitHub LINK and invite your GitHub email.
+
+You must:
+1. Accept the invite (check email / GitHub notifications)
+2. Clone THAT project (download the lead’s folder)
+3. Open THAT folder in Antigravity
+4. Every time you sit down to work: Pull first (get latest files)
+
+You must NOT:
+- create a new empty project
+- open a random Desktop folder
+- start coding before the kanch-net folder is open
+
+If you do not know how, paste YELLOW BOX 1 from your role file into ChatGPT.
+ChatGPT will tell you what to click, one step at a time.
+You can also paste the GitHub link into Antigravity and ask:
+"Clone this GitHub link and open the kanch-net folder. I am a beginner. Click by click."
+
+--------------------------------------------------
+IF A WORD LOOKS SCARY
+--------------------------------------------------
+
+Ask ChatGPT: "Explain like I am new. Can the coding AI just do this for me?"
+
+Clone = copy the project from GitHub onto your computer
+Pull = download new files from GitHub before you work
+Push = send your work back to GitHub
+Repo / repository = the GitHub project
+OTP / login code = 1234
+Starter list / seed = pretend piles already in the app
+Batch / pile = one family’s bangles (B-001)

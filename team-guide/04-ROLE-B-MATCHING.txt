@@ -1,0 +1,116 @@
+KANCH-NET — YOUR ROLE: PERSON B (MATCHING)
+You make the brain screen: which piles fit the buyer, and WHY.
+
+Lead uses Cursor. You use ChatGPT (teacher) + Antigravity (code).
+You work in the lead’s GitHub folder. You do not make a new app.
+
+--------------------------------------------------
+YOUR JOB
+--------------------------------------------------
+
+Buyer wants red + size 2-6 + shiny + grade B, 10,000 pieces. ORD-001.
+
+Your screen: order card, IN list, OUT list with a simple reason
+example: “This pile is blue. Buyer wants red.”
+Also show how many pieces we still need.
+
+Simple yes/no rules. Not ChatGPT guessing.
+
+Hide family phone numbers from the buyer.
+
+--------------------------------------------------
+WHO HELPS YOU / WHO YOU HELP
+--------------------------------------------------
+
+Lead: starter list already in the project.
+Person A later: new piles.
+You help Person C: which piles are in the order.
+You can finish today using the starter list. Do not wait for A.
+
+--------------------------------------------------
+DONE WHEN
+--------------------------------------------------
+
+Someone can see what the buyer wants, who is in, why the blue one is out.
+
+--------------------------------------------------
+EASY VERSION
+--------------------------------------------------
+
+One page. No map. Top order, middle IN, bottom OUT.
+
+--------------------------------------------------
+HOW TO USE THE TWO AIS
+--------------------------------------------------
+
+ChatGPT left, Antigravity right.
+Day 1: YELLOW BOX 1 first. Then YELLOW BOX 2. Then ANTIGRAVITY BOX.
+If Antigravity builds the whole app, say: only app/matching.
+
+--------------------------------------------------
+YELLOW BOX 1 — PASTE IN CHATGPT FIRST
+(setup GitHub + Antigravity. I am a beginner.)
+--------------------------------------------------
+
+I am Person B on a student team. I am a beginner. I have never used GitHub or Antigravity (or I have used them very little).
+
+The team lead sent me:
+- two files: 01-EVERYONE-READ-THIS.txt and this Person B role file
+- a GitHub link I will paste here: PASTE_THE_GITHUB_LINK_HERE
+
+I must use the lead’s project. I must NOT create a new empty project.
+
+Please be my teacher. Simple English. One click at a time, like I am 15.
+
+Help me:
+1) GitHub account if needed
+2) Accept the invite
+3) Install Antigravity from antigravity.google if needed
+4) Clone the GitHub link (Antigravity “Clone Repository” if it exists)
+5) Open the kanch-net folder in Antigravity — not a new project
+6) Pull before every work session
+7) ChatGPT on one half of the screen, Antigravity on the other
+8) When setup is done, tell me to paste YELLOW BOX 2
+
+Wait for screenshots. Do not tell me to start a new app.
+
+--------------------------------------------------
+YELLOW BOX 2 — PASTE IN CHATGPT AFTER THE FOLDER IS OPEN
+--------------------------------------------------
+
+I am Person B. kanch-net is already open in Antigravity. I am a beginner.
+I make ONLY the matching screen in app/matching.
+
+Please be my teacher in simple English:
+1) Small steps for today
+2) What to paste into Antigravity
+3) Easy version: two lists + reasons. No map
+4) Simple if-this-then-that rules, not AI matching
+5) Do not let me build phone, pickup, or money
+
+--------------------------------------------------
+ANTIGRAVITY BOX — PASTE ONLY AFTER KANCH-NET FOLDER IS OPEN
+--------------------------------------------------
+
+I am Person B. This folder is the team GitHub project kanch-net. Do not create a new project.
+
+Work ONLY in app/matching. Do not edit phone, pickup, money, login, or data/starter-list.json.
+
+Read data/starter-list.json. Order is ORD-001.
+
+Keep the order card. Add:
+- IN list of matching piles
+- OUT list with a plain reason, e.g. "Colour blue does not match red"
+
+Rules (simple checks, not AI):
+- colour must be ruby_red
+- size must be 2-6
+- product must be glass_bangle
+- finish must be plain_glossy
+- grade B or better (A ok, C not)
+
+Remaining = 10000 minus IN quantities. Do not count a pile twice.
+Hide family phone numbers.
+No map. Area names are enough.
+
+Before you edit: pull. After: tell me how to push only my files.

@@ -1,0 +1,79 @@
+COPY-PASTE WHATSAPP MESSAGES
+
+Replace PASTE_LINK with your real GitHub link after the repo is live.
+Replace the two file names if needed. Files are in the repo folder team-guide/
+You can also WhatsApp those txt files from your computer.
+
+--------------------------------------------------
+MESSAGE 1 — WHOLE GROUP
+--------------------------------------------------
+
+We are making Kanch-Net.
+
+Home workers make small piles of bangles. Buyer wants one big matching pile. Our app helps a local group combine matching piles, check them, and show fake money. Not real UPI.
+
+I use Cursor for the empty website.
+A, B, C use ChatGPT (teacher) + Antigravity (code) on MY GitHub project.
+Presentation pair = slides only. No code.
+
+I will send you 2 files + later a GitHub link.
+Open ChatGPT. Upload both files. Paste YELLOW BOX 1 from YOUR file first (it will help you clone and open the folder).
+Do not make a new project.
+If a word is scary, ask ChatGPT to explain like you are new.
+Stuck 20 minutes = message me.
+
+--------------------------------------------------
+MESSAGE 2 — AFTER GITHUB EXISTS (builders)
+--------------------------------------------------
+
+GitHub link: PASTE_LINK
+
+1) Make a GitHub account if you don’t have one
+2) Accept my invite in your email
+3) Open ChatGPT, upload 01-EVERYONE + YOUR role file
+4) Paste YELLOW BOX 1 and also paste this same GitHub link when it asks
+5) ChatGPT will help you clone and open kanch-net in Antigravity
+6) Pull every time before you work
+7) Then paste YELLOW BOX 2 in ChatGPT, and the Antigravity box in Antigravity
+
+Do not create a new empty app.
+
+--------------------------------------------------
+MESSAGE 3 — PERSON A
+--------------------------------------------------
+
+You are Person A. Files: 01-EVERYONE + 03-ROLE-A-PHONE.
+Only job: family phone screens. Mic is extra.
+ChatGPT yellow box 1 first.
+
+--------------------------------------------------
+MESSAGE 4 — PERSON B
+--------------------------------------------------
+
+You are Person B. Files: 01-EVERYONE + 04-ROLE-B-MATCHING.
+Only job: order + IN + OUT with reason.
+ChatGPT yellow box 1 first.
+
+--------------------------------------------------
+MESSAGE 5 — PERSON C
+--------------------------------------------------
+
+You are Person C. Files: 01-EVERYONE + 05-ROLE-C-PICKUP-AND-MONEY.
+Pickup, quality, fake money. Type B-001. No camera.
+ChatGPT yellow box 1 first.
+
+--------------------------------------------------
+MESSAGE 6 — PRESENTATION PAIR
+--------------------------------------------------
+
+You two: 01-EVERYONE + 06-ROLE-PRESENTATION.
+ChatGPT only. No Antigravity. No GitHub required today.
+Do not write on slides that we do real payments.
+
+--------------------------------------------------
+MESSAGE 7 — IF SOMEONE PANICS
+--------------------------------------------------
+
+You do not need to understand every computer word.
+ChatGPT tells you what to click. Antigravity writes code.
+Do YELLOW BOX 1 only today if setup is hard. Message me a screenshot.

@@ -1,0 +1,23 @@
+WHO OWNS WHICH FOLDER
+Do not edit another person's folder.
+
+Lead (Cursor) owns:
+- app/page.tsx (login)
+- data/starter-list.json
+- lib/
+- components/AppHeader.tsx, LoginForm.tsx, NeedLogin.tsx
+- README.md
+
+Person A (Antigravity) owns:
+- app/phone/
+
+Person B (Antigravity) owns:
+- app/matching/
+
+Person C (Antigravity) owns:
+- app/pickup/
+- app/money/
+
+Before you work: Pull.
+After you work: Push.
+If GitHub fights you: stop and message the lead.

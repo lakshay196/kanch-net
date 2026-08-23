@@ -1,0 +1,117 @@
+KANCH-NET — YOUR ROLE: PERSON A (PHONE)
+You make the home-worker phone screens. That is your whole job.
+
+Lead uses Cursor. You use ChatGPT (teacher) + Antigravity (code).
+You work in the lead’s GitHub folder. You do not make a new app.
+
+--------------------------------------------------
+YOUR JOB
+--------------------------------------------------
+
+Big buttons. Hindi is okay.
+They type or talk: product, size, colour, how many, ready date.
+CONFIRM screen: “I heard … Is this right?” Tap YES.
+Then My piles, name like B-007.
+
+You are not making matching, pickup, or money.
+
+--------------------------------------------------
+WHO HELPS YOU / WHO YOU HELP
+--------------------------------------------------
+
+Lead helps you: website and GitHub already exist.
+You help Person B later: new piles from Confirm.
+You do not wait for B or C.
+
+--------------------------------------------------
+DONE WHEN
+--------------------------------------------------
+
+Login 9000000001 / 1234, add a pile, see it in My piles.
+If mic is hard, a form is enough.
+
+--------------------------------------------------
+EASY VERSION
+--------------------------------------------------
+
+Skip microphone. Form + confirm + list.
+
+--------------------------------------------------
+HOW TO USE THE TWO AIS (every time)
+--------------------------------------------------
+
+Left side of screen: ChatGPT (teacher)
+Right side: Antigravity (writes code)
+
+First day: YELLOW BOX 1 in ChatGPT (setup).
+When kanch-net folder is open in Antigravity: YELLOW BOX 2 in ChatGPT, then ANTIGRAVITY BOX in Antigravity.
+
+If Antigravity tries to build the whole app, say: NO. Only app/phone.
+
+--------------------------------------------------
+YELLOW BOX 1 — PASTE IN CHATGPT FIRST
+(setup GitHub + Antigravity. I am a beginner.)
+--------------------------------------------------
+
+I am Person A on a student team. I am a beginner. I have never used GitHub or Antigravity (or I have used them very little).
+
+The team lead sent me:
+- two files: 01-EVERYONE-READ-THIS.txt and this Person A role file
+- a GitHub link I will paste here: PASTE_THE_GITHUB_LINK_HERE
+
+I must use the lead’s project. I must NOT create a new empty project.
+
+Please be my teacher. Simple English. One click at a time, like I am 15.
+
+Help me:
+1) Make a GitHub account if I do not have one
+2) Accept the lead’s invite (email / GitHub bell)
+3) Install Antigravity from antigravity.google if it is not installed
+4) Clone the GitHub link (copy the lead’s folder onto my computer)
+   If Antigravity has “Clone Repository”, tell me to use that and paste the link
+5) Open the kanch-net folder in Antigravity — that folder, not Desktop, not a new project
+6) Teach me Pull = before I work, get latest files
+7) Teach me to put ChatGPT on one half of the screen and Antigravity on the other
+8) When setup is done, tell me to come back and paste YELLOW BOX 2
+
+Wait if I send a screenshot. Do not skip ahead. Do not tell me to start a new Next.js app.
+
+--------------------------------------------------
+YELLOW BOX 2 — PASTE IN CHATGPT AFTER THE FOLDER IS OPEN
+--------------------------------------------------
+
+I am Person A. The kanch-net folder is already open in Antigravity. I am a beginner.
+
+I make ONLY the home-worker phone screens in app/phone.
+
+Please be my teacher:
+1) Next 1 hour in very simple steps
+2) What I should paste into Antigravity
+3) Easy version first: form + confirm + my piles. Microphone later
+4) Do not let me build matching, pickup, QR, or money
+5) If a word is hard, explain or say Antigravity can do it without me learning it
+
+--------------------------------------------------
+ANTIGRAVITY BOX — PASTE ONLY AFTER KANCH-NET FOLDER IS OPEN
+--------------------------------------------------
+
+I am Person A. This folder is the team GitHub project kanch-net. Do not create a new project.
+
+Work ONLY in app/phone. Do not edit app/matching, app/pickup, app/money, login, or data/starter-list.json.
+
+Make a simple mobile-looking page:
+- Huge button: बोलो / Speak
+- If speak fails, a form: product, size, colour, quantity, ready date
+- Confirm screen. User must tap Confirm. Do not save without confirm.
+- My piles list: name, quantity, status
+
+Word mapping:
+- "lal chudi" / "लाल चूड़ी" = red glass bangle
+- "neeli chudi" / "नीली चूड़ी" = blue glass bangle
+
+Use the same field names as data/starter-list.json. Do not invent new names.
+9000000001 = family 1, 0002 = family 2, 0003 = family 3.
+
+If microphone is annoying, skip it and keep the form.
+Hindi-first, big buttons.
+Before you edit: pull latest files. After: tell me how to push only my files.

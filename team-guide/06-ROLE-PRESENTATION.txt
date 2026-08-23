@@ -1,0 +1,59 @@
+KANCH-NET — YOUR ROLE: PRESENTATION (2 PEOPLE)
+You do NOT write the app. You do NOT use Antigravity.
+You use ChatGPT only, plus screenshots from the lead later.
+
+--------------------------------------------------
+YOUR JOB
+--------------------------------------------------
+
+Slides, 3-minute speech, poster if needed, judge answers.
+You tell the human story. The other 4 people click the screens.
+
+--------------------------------------------------
+WHO HELPS YOU
+--------------------------------------------------
+
+Lead: the one story + screenshots.
+A, B, C: one screenshot each.
+You help judges understand Firozabad, not computer words.
+
+Do not invent features the app does not have.
+Do not write “we pay instantly from 25% booking”.
+
+--------------------------------------------------
+THE STORY
+--------------------------------------------------
+
+Problem: home glass workers make small piles. Buyers want one huge matching pile. So a middleman sits in the middle.
+
+What we built: phone → keep matching piles → pickup and quality → fake payment notebook.
+
+Heritage: if people cannot earn, the craft dies.
+
+Honest limits (this looks smart):
+- A person does quality check, not magic AI
+- Money on screen is a demo
+- We are not the government
+
+--------------------------------------------------
+YELLOW BOX FOR CHATGPT
+--------------------------------------------------
+
+We are 2 students making ONLY the presentation for Kanch-Net. We are not coding.
+
+Write simple, strong English:
+1) 8-10 slides
+2) A 3-minute speech
+3) Judge Q&A
+4) Do not claim real payments, Aadhaar, or that a small booking pays everyone
+5) Lead with craft + income
+6) Demo story: 10000 red bangles, one blue pile rejected, pay only accepted pieces
+
+--------------------------------------------------
+SPLIT
+--------------------------------------------------
+
+Person 1: slides + poster
+Person 2: speech + judge answers + timer
+
+Practise with the lead twice. When they click, you talk.
