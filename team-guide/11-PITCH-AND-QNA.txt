@@ -1,0 +1,485 @@
+KANCH-NET — PITCH + QnA BRIEF (paste into ChatGPT)
+SIH student team. Heritage & Culture. Firozabad glass.
+
+HOW TO USE THIS FILE
+Upload or paste this whole file into ChatGPT (or Gemini). Then say:
+"Use this as the product truth. Help me practise jury QnA. Do not invent features the demo does not have. If a slide disagrees with this file, follow this file."
+
+This brief matches BOTH:
+A) the product idea (PRD: team-guide/08-KANCH-NET-PRD.txt)
+B) what the current demo actually does vs what it fakes
+
+Do not implement code from this file. Do not add Amazon, real UPI, Aadhaar, escrow, or infinite crafts.
+
+Locked demo numbers (do not change):
+- Product: red glass bangles (lal chudi), size 2-6, plain shiny (chamak), Grade B or better
+- Buyer order ORD-001: 10,000 pieces
+- Buyer list price: Rs 10 per piece
+- Family rate: Rs 8 per ACCEPTED piece
+- Cooperative fee: 5% of that gross
+- Broken / rejected / damaged: Rs 0
+- Booking note: 25% (reservation only — does NOT pay every family)
+- Login code: 1234
+- Family 1 phone 9000000001 (red pile B-001, Ramnagar, ~2 km)
+- Family 2 phone 9000000002 (red pile B-002, Suhag Nagar, ~4 km)
+- Family 3 phone 9000000003 (BLUE pile B-003, Ramnagar — this one is OUT)
+- Collector 9000000010 → /pickup
+- Coordinator 9000000020 → /matching
+- Buyer 9000000030 → /buyer
+- Pile names: B-001, B-002, … B-020
+- Spoken terms: "lal chudi" = red, "neeli chudi" = blue
+
+
+==================================================
+1. ONE-LINE PITCH
+==================================================
+
+Kanch-Net lets many Firozabad home glass families act like one reliable wholesale supplier: they speak or tap their small piles (chudiyan), we keep only piles that match the buyer’s exact spec, a collector picks them up, a person checks quality, and a transparent ledger shows what each family would be paid for accepted pieces only.
+
+Shorter stage line:
+Small home piles of Firozabad glass become one matching buyer lot — with a reason when a pile is out, and fake money only on good pieces.
+
+
+==================================================
+2. PROBLEM (be concrete)
+==================================================
+
+Place: Firozabad (Firozabad), Uttar Pradesh. Home glass work. Local words: kanch, chudi / chudiyan, lal, neeli, mandi, thekedar (middleman), ghar ka kaam.
+
+What a household actually has
+One family does not make a truckload. In our starter data a typical home pile is a few hundred pieces, not 10,000.
+Examples already in the demo:
+- Family 1 (HH-01, Ramnagar): B-001 = 450 red size 2-6, spoken "lal chudi"
+- Family 2 (HH-02, Suhag Nagar): B-002 = 500 red size 2-6, Grade A (better than B, so it can still join)
+- Family 3 (HH-03, Ramnagar): B-003 = 300 BLUE size 2-6, spoken "neeli chudi"
+Across 20 seeded households, matching red piles add up to about 5,680 declared pieces. The buyer still needs 10,000. So even “all the matching homes together” do not yet fill the order. That is the aggregation problem.
+
+What the buyer wants
+A wholesale buyer (mandi / exporter / bangle trader) wants ONE lot that all looks the same:
+- 10,000 pieces
+- red (ruby red / lal)
+- size 2-6
+- plain shiny finish (plain glossy / chamak)
+- Grade B or better
+- packed later as 100 per sleeve
+- delivery window 10–12 September 2026
+
+The buyer cannot visit 20 houses, argue colour, count pieces, and pay each family separately. Quantity without sameness has no wholesale value. A pile of blue next to a pile of red is not “almost the order”. It is a different product.
+
+Where the middleman sits
+Because piles are small and mixed, a thekedar / local aggregator collects mixed stock, sets the price, and the family often does not see:
+- whether their pile matched the real buyer spec
+- how many pieces were rejected as toot gayi (broken)
+- why payment was late or cut
+
+Even a Category 2 household that buys its own kanch and owns the finished chudiyan can still depend on that middleman for market access.
+
+Quality mismatch (the demo must show this)
+Family 3’s blue pile is the teaching example:
+Buyer wants red. Family 3 logged neeli chudi. The screen must say something like:
+“Colour is blue, buyer wants red.”
+Other seeded mismatches (same idea, different field):
+- B-008: size 2-4, buyer wants 2-6
+- B-015: matte / dull finish, buyer wants plain shiny
+- B-019: Grade C, buyer wants Grade B or better
+
+Payment confusion
+Families hear “the buyer booked the order” and think money is on the way. A 25% booking on 10,000 pieces is not enough to pay every household 100% on pickup. If we promised that, the maths is a lie.
+Correct rule: pay only accepted quantity after a human quality check. Rejected and damaged pieces = Rs 0. Booking is a reservation note, not a full salary.
+
+Heritage angle (why this theme)
+Firozabad Glass is a registered Geographical Indication (GI application 155, listed valid through 8 February 2029). Glass products are also an official Firozabad ODOP category. The craft survives only if the people who still know the furnace and the chudi can earn from a real buyer lot. Heritage here is living income infrastructure, not a museum catalogue.
+
+Worker types (say this if asked)
+1. Factory / workshop wage worker — does not own the goods. Out of scope. That is a labour-rights problem, not our lot compiler.
+2. Independent household producer — buys material, owns finished chudiyan. This is our primary user. We pool THEIR piles.
+3. Material-dependent household — thekedar supplies kanch and usually owns the output. We do not pretend their pile is theirs. Future only through a lawful cooperative material scheme tied to an already-specified order.
+
+
+==================================================
+3. WHAT WE ARE NOT
+==================================================
+
+Not Amazon / Flipkart / Meesho
+We are not a consumer marketplace with infinite SKUs, ratings, and cart checkout.
+
+Not ONDC (yet)
+ONDC can be a future sales pipe. It does not collect 20 home piles, reject the blue one, or pay only accepted pieces. We solve production aggregation BEFORE a listing.
+
+Not real UPI / GPay / bank transfer
+The money screen is a SIMULATED ledger. No Pay button that looks like GPay. No UPI PIN. No real rupees move.
+
+Not Aadhaar
+No Aadhaar number, no Aadhaar OTP. Demo login is phone + code 1234.
+
+Not escrow / we do not hold buyer funds
+We do not take 25% booking into our own account. Production money must go through a licensed bank or payment aggregator. RBI rules apply to real escrow. We are a student prototype.
+
+Not an infinite craft marketplace
+This SIH demo is ONE product family: glass bangles, mainly red vs blue, size 2-6 or 2-4, shiny vs not, grade A/B/C.
+Pottery and textile appear in the artisan craft menu as “making in process” / not open yet. Do not demo them as working catalogues.
+
+Not “AI matching”
+Matching is if-this-then-that rules (colour, size, finish, grade). A large language model must not silently put a blue pile into a red order.
+
+Not a replacement for physical QC
+A person looks at the chudiyan. Software records accepted / rejected / damaged and the reason.
+
+Not a loan app
+We do not issue kanch on credit from the app. Category 3 material allocation is a future cooperative + legal problem, not a “loan button”.
+
+Not government
+We are not GI registry, ODOP portal, GeM, or UIDAI.
+
+
+==================================================
+4. SOLUTION / HOW THE SYSTEM WORKS END TO END
+==================================================
+
+Plain story
+Buyer writes one spec card.
+Families record small piles by voice or big buttons.
+Software keeps only compatible piles and says why others are out.
+A collector gathers the matching piles.
+A checker counts how many pieces are actually good.
+A fake notebook shows each family’s payout from accepted pieces only.
+
+Step A — Lot Specification Card (buyer demand)
+Mandatory fields, not a vague “I want bangles”:
+- Product: red glass bangle / glass_bangle
+- Size: 2-6 (exact unless a later version allows tolerance)
+- Colour: ruby red / lal
+- Finish: plain glossy / plain shiny / chamak
+- Minimum grade: B (A is allowed; C is not)
+- Quantity: 10,000
+- Packaging: 100 per sleeve (needed before final acceptance in the real world)
+- Sample: a physical sample or photo for a HUMAN to compare
+- Delivery window: 10–12 September 2026
+- Prices in demo: buyer Rs 10, artisan Rs 8, coop fee 5%, booking 25% noted
+
+In the live buyer home (/buyer), a logged-in buyer can also post another demand (colour red or blue, size 2-6 or 2-4, grade A or B, quantity). Finish is still treated as plain shiny in this demo. The seeded card ORD-001 stays the main jury story.
+
+Step B — Artisan stock (ghar ka maal)
+A family opens artisan home (/artisan) after login.
+They choose craft: Bangle makers. Pottery and textile show as not open yet.
+They set:
+- Colour: Red (lal) or Blue (neeli)
+- How many pieces
+- Quality: A fine / B regular
+Size and shiny finish are fixed on this screen to the demo SKU (2-6, plain glossy) so the family is not asked to fill a spreadsheet.
+They can tap Speak. If Chrome speech works, it listens in Hindi (hi-IN) and tries to hear lal/red, neeli/blue, a number, and A/B. Then they still check the boxes and tap Post stock.
+The pile is saved with a new batch id (B-021, …) and a spoken term (lal chudi / neeli chudi).
+The same screen shows “Buyer wants” (so the family can see the mandi demand) and “Your stock”.
+
+There is a second, Person A screen at /phone: Hindi-first form, confirm before save, “lal chudi / neeli chudi” mapping. Voice there is largely demo phrases / assisted entry, not a trained dialect model. Main jury path: artisan home + buyer home.
+
+Step C — Spec match (this is the product brain)
+A pile may join a lot ONLY if every mandatory field matches:
+- same product family (glass bangle)
+- same size
+- same colour family
+- same finish
+- grade equal or better than minimum (A beats B; C loses)
+
+First failing field wins the human reason. Examples the demo must be able to say:
+- Colour is blue, buyer wants red
+- Size is 2-4, buyer wants 2-6
+- Look is matte, buyer wants plain shiny
+- Grade is C, buyer wants B or better
+
+No silent conversion. No “it is close enough” by AI.
+
+Step D — Distance is ONLY a tie-break
+After a pile already matches the spec, nearer to Firozabad mandi is shown first.
+Demo km (not GPS, not live maps):
+- Ramnagar ~2 km
+- Suhag Nagar ~4 km
+- North ~6 km
+- South ~7 km
+A nearby BLUE pile still loses to a farther RED pile. Spec wins. Distance never rescues a mismatch.
+Buyer home sorts matching stock nearest-first. Staff matching screen currently lists IN/OUT from the starter file with reasons; it does not pretend to be a Google-Maps route optimiser.
+
+Step E — Pickup + QC
+Collector logs in → /pickup.
+They type a batch id (B-001). There is no live camera QR scan in this demo (PRD wants QR later; today it is typed).
+They record collected quantity and OK vs damaged.
+Then quality check:
+- accepted quantity (only this can be paid)
+- rejected quantity
+- damaged quantity
+- reason: wrong colour, wrong size, broken, short quantity, packing, duplicate id, other
+Accepted + rejected + damaged must not exceed collected.
+Seeded teaching piles:
+- B-005 already collected 350, not yet finally accepted
+- B-011 already accepted 390 (clean story)
+- B-016 collected 370, accepted 300, rejected 70, damaged 70, reason broken
+
+Step F — Fake settlement on ACCEPTED qty only
+Money page /money shows a big SIMULATED / NOT REAL MONEY banner.
+Formula the team must recite:
+  Gross = accepted pieces × Rs 8
+  Fee = 5% of gross
+  Family gets = gross − fee
+  Rejected / damaged / only-declared / only-collected = Rs 0
+
+Worked example from seed:
+- B-011: 390 accepted → gross 3120 → fee 156 → family 2964 (simulated)
+- B-016: 300 accepted (70 broken unpaid) → gross 2400 → fee 120 → family 2280 (simulated)
+
+25% booking is a reservation note on the order. It is not used to pay all families in full.
+
+In production (not this demo): a licensed payment partner executes payouts after accepted milestones and cleared funds. Kanch-Net would send instructions, not hold the kothi (cash box).
+
+
+==================================================
+5. TWO INTERFACES (plus staff tools)
+==================================================
+
+LOGIN (everyone)
+Open the site. Phone + code 1234.
+Demo phones are behind “Demo help” so a real-looking family is not staring at a cheat sheet. Tap help only if you need a test login.
+After login, each role is sent to its home page.
+
+A) ARTISAN (family) — /artisan
+Who: Family 1, 2, 3 (Category 2 household).
+Sees: craft picker, Speak + colour/qty/grade, Post stock, buyer wants, own stock.
+Does not see: other families’ phones, the full payout table, staff IN/OUT board.
+Job in one sentence: “Yeh mera dher hai” — post what we made.
+
+B) BUYER — /buyer
+Who: wholesale buyer 9000000030.
+Sees: raise a demand, open demands, artisan stock that can join (same spec, then nearest), and “won’t work” with a reason.
+Does not see: household phone numbers (staff matching also hides phones; it shows household id + locality only).
+Job in one sentence: “I need 10,000 identical red 2-6” — not 10,000 mixed souvenirs.
+
+C) STAFF TOOLS (cooperative people, not the two public homes)
+
+Coordinator — /matching
+Person B’s screen. Order card for ORD-001 (10,000 red 2-6, ruby red, plain glossy, Grade B or better).
+IN list: piles that satisfy every rule, with declared piece counts.
+OUT list: each excluded pile + a plain reason (Family 3 / B-003: colour blue does not match ruby red).
+Remaining = 10,000 minus sum of IN declared quantities (starter run: 10,000 − 5,680 = 4,320 still needed). Do not count a pile twice.
+This staff page reads the seeded starter list (the 20 piles in data/starter-list.json). A pile you just posted on artisan home is meant to show on buyer home; do not claim the coordinator page is a live server of every new post.
+
+Collector — /pickup then /money
+Person C’s screens.
+Pickup: type B-001, collected qty, condition, then accepted/rejected/damaged + reason.
+Money: SIMULATED table, accepted × 8, minus 5%. Banner must stay visible.
+Header on staff routes says these are staff tools; the main demo story is artisan home and buyer home.
+
+Facilitator note
+Low-literacy families may use a trusted coordinator once. The product is still voice + confirmation + reasons, not a 40-field English form.
+
+
+==================================================
+6. CASE STUDIES / DEMO STORY WALKTHROUGH
+==================================================
+
+Use ONE story. Do not invent a second product mid-demo.
+
+--- Story 1: Family 1 red IN ---
+Login 9000000001 / 1234 → artisan home.
+Family 1 already has B-001: 450 lal chudi, size 2-6, shiny, Grade B, Ramnagar.
+Optional live bit: Speak “lal chudi 200”, check Red + 200 + B, Post stock. Buyer can see that extra red dher.
+On buyer home (login 9000000030): this pile is IN. Reason: every spec field matches. Distance label ~2 km is extra information, not the reason it matched.
+
+--- Story 2: Family 3 blue OUT with reason ---
+Login 9000000003 / 1234. Family 3 has B-003: 300 neeli chudi.
+Buyer still wants red 10,000.
+On buyer home AND on coordinator matching:
+B-003 is OUT.
+Say out loud: “Colour is blue. Buyer wants red. We do not hide the mismatch.”
+That is trust. A middleman might mix it and hope. We refuse the pile for THIS lot.
+
+--- Story 3: Pickup, some rejected, money SIMULATED ---
+Login collector 9000000010.
+Walk pickup: type B-001 (or click it), mark collected, then QC.
+Teaching seed already on money/pickup:
+Pile 1 style (B-011): all 390 accepted → paid on 390.
+Pile 2 style (B-016): 370 collected, 300 accepted, 70 broken → paid on 300 only.
+Open /money. Point at SIMULATED — NOT REAL MONEY.
+Recite: declared 370 does not earn; collected 370 does not earn; accepted 300 × 8, minus 5%.
+
+--- Story 4: “What if the buyer wants shiny animals?” ---
+Jury trap. Honest answer:
+
+We do NOT match infinite designs.
+If a buyer wants shiny glass animals / custom figurines / a new cut, that is a NEW Lot Specification Card: product family, size, colour, finish, grade, quantity, packaging, delivery, and a physical sample.
+Software will not scrape the internet for “similar crafts” or auto-include a bangle pile into an animal order.
+A human compares the sample to the household batch (photo is evidence, not proof).
+Pottery and textile tiles in the app are “making in process”, not a second marketplace.
+After Firozabad bangles work in a real cooperative pilot, the same compiler idea can be copied to another craft — only after ownership and quality rules are checked. We do not assume every craft is the same.
+
+Close the demo with:
+Heritage line: if these families cannot sell a matching lot, the skill dies even if GI paperwork exists.
+
+
+==================================================
+7. HONEST DEMO LIMITS (say these before the jury does)
+==================================================
+
+localStorage, not FastAPI
+The running SIH app is Next.js screens. Shared artisan/buyer piles and demands live in the browser (localStorage) plus data/starter-list.json. The PRD’s Python FastAPI + PostgreSQL is the production sketch, not what you are clicking today.
+
+Voice is browser speech, not Bhashini
+Artisan Speak uses the browser’s SpeechRecognition (works best in Chrome), language hi-IN, then a tiny word map (lal / neeli / red / blue / numbers / A-B). It is not a custom Firozabad dialect model and not a live Bhashini/Whisper server. If the mic fails, tap the big buttons. Person A’s /phone speak control is demo-assisted, not production ASR.
+
+QR is not live
+PRD wants a batch QR. Pickup today: type B-001. No camera required. Do not wave a dead QR and claim scanning.
+
+Demo logins are behind help
+Phones 9000000001 etc. and code 1234 are a prototype. Not Aadhaar OTP. Not production identity.
+
+Three browser “notebooks” (do not over-claim one database)
+1) Artisan + buyer homes share starter piles plus extras (localStorage keys kanch-shared-piles and kanch-shared-demands). A new red post on Family 1 should appear on buyer IN/OUT.
+2) Coordinator /matching currently scores the 20 seeded piles in data/starter-list.json against ORD-001. Same rules, frozen list. Show a brand-new post on artisan + buyer, not by promising the staff page refreshed.
+3) Pickup and money share one Person C notebook (kanch-person-c-batches). Typed QC on /pickup is meant to feed /money. Seeded B-011 (390 accepted) and B-016 (300 accepted, 70 broken) already teach the pay-only-accepted rule.
+
+Do not claim FastAPI synced all three. Do not fake a bank SMS.
+
+No real maps / GPS
+km labels are a fixed teaching table from mandi, not the user’s satellite location.
+
+No real GST API, no GeM write, no ONDC publish, no GI authorised-user API.
+
+Photos / ownership
+We do not prove legal ownership of glass with a selfie. Community trust and cooperative process are future work.
+
+Interviews
+PRD still wants 10–20 artisan interviews and 3 buyer interviews. Do not claim a formal survey if you only have a prototype.
+
+What IS real in the demo (do claim this)
+- One locked spec
+- IN/OUT with a readable reason
+- Blue cannot enter a red order
+- Grade C cannot enter a Grade B minimum order
+- Wrong size / wrong finish excluded
+- Settlement maths on accepted pieces
+- Clear SIMULATED money labelling
+- Distance does not override spec (buyer home)
+
+
+==================================================
+8. QnA PACK (jury + internal practice)
+==================================================
+
+Q1. Why not just put artisans on ONDC / Amazon?
+A. Those channels sell a listing. They do not turn 20 tiny, mixed home piles into one spec-true lot, reject the blue dher with a reason, or pay only QC-accepted pieces. ONDC can be a later pipe. Kanch-Net is the missing factory-floor compiler for households.
+
+Q2. Is this escrow? Do you hold the buyer’s money?
+A. No. This build is a mock ledger. Real movement needs a bank or licensed payment aggregator under RBI rules. We show instructions: booking, accepted value, fee, payout. We do not custody funds.
+
+Q3. You take 25% booking — does that pay every family immediately?
+A. No. That old claim is wrong. 25% of the order cannot fund 100% artisan payment. Booking reserves capacity. Families are paid against accepted milestones and cleared partner funds. Demo booking is a note only.
+
+Q4. How do Category 3 workers join (thekedar gives the kanch)?
+A. Not by uploading the thekedar’s goods as their own. Only later, if a cooperative legally allocates material against a confirmed spec, records consent, cost, and deduction. The app must not be a loan shark.
+
+Q5. Why Heritage & Culture if this is logistics software?
+A. Firozabad Glass is a registered GI and an ODOP product. A GI plaque does not feed a household. Reliable lots and transparent accepted-qty pay keep the living skill in the gali, not only in a brochure.
+
+Q6. Why not AI matching / ChatGPT to decide IN or OUT?
+A. Wholesale buyers need zero surprise SKUs. A model that “thinks” blue is close to red would poison the lot. Rules are auditable: first failing field, human-readable reason, coordinator can explain. AI may later help parse messy speech, never auto-include a pile.
+
+Q7. Does nearest family always win?
+A. No. Spec match is mandatory. Distance is only a sort among already-matching piles (dummy km to Firozabad mandi). A 2 km blue pile loses to a 7 km red pile.
+
+Q8. Families cannot read English / forms. How is this usable?
+A. Big buttons, Hindi colour words (lal / neeli), Speak in the browser, confirmation of what was heard, a facilitator if needed. We do not require a catalogue spreadsheet. If speech fails, they tap. Literacy is a design constraint, not a speech-branding slide.
+
+Q9. How does this scale from 20 demo houses to the whole cluster?
+A. The unit of scale is one cooperative + one SKU + physical collection, not a national app store. Pilot: shadow the existing process, no real money. Then one authorised payment partner. Replication to another craft is Phase 4, after Firozabad rules are proven.
+
+Q10. Who actually checks quality?
+A. A trained cooperative collector/checker. Software stores quantities, reasons, batch ids. It does not replace eyes on glass. Sample mismatch can wait for buyer review.
+
+Q11. Is voice Bhashini?
+A. Not in this demo. Chrome (or similar) speech API + a small term list. Production sketch in the PRD mentions Bhashini/Whisper later, always with a confirm screen because speech errors must not enter the lot.
+
+Q12. Where is FastAPI / the database?
+A. PRD target stack. Current clickable demo: Next.js + starter JSON + browser storage. Say that in one sentence so you are not caught claiming a backend you did not run.
+
+Q13. Do you scan QR codes?
+A. Design yes, demo no. Today the collector types B-001. QR is on the roadmap so the same batch id follows the physical dher.
+
+Q14. Are login phones real KYC?
+A. No. Fixed demo phones and code 1234, hidden under Demo help. Production would use ordinary mobile OTP, not Aadhaar OTP in this MVP.
+
+Q15. What stops you becoming the new thekedar?
+A. Fixed disclosed fee (5% in demo), batch-level rates, rejection reasons shown, household details hidden from the buyer, member-governed cooperative as the operator. Software without governance could still become a middleman — that is a mission risk we name.
+
+Q16. GI / authorised user / export sticker — do you register that?
+A. No. We do not write to the GI registry. We use GI as justification that this is a real place-based craft economy.
+
+Q17. Factory workers are also poor. Why ignore them?
+A. They do not own the lot we would pool. Mixing wage-labour output into a household lot would be legally and morally wrong. Different problem, different product.
+
+Q18. What if supply is more than 10,000 matching pieces?
+A. MVP should not silently favour a caste or a cousin. PRD: show a fair-rotation recommendation; coordinator confirms. Current demo still has leftover demand (~4,320). Do not overclaim a live rotation UI if you only have IN/OUT lists.
+
+Q19. What if the buyer wants shiny animals / fancy designs?
+A. New spec card + human sample. We refuse infinite-catalogue matching. Bangle piles stay bangle piles.
+
+Q20. Pottery and textile?
+A. Menu placeholders: making in process. Not in SIH scoring path.
+
+Q21. How is money calculated if 200 declared and 180 accepted?
+A. Pay 180 × 8, minus 5%. Never 200. Never collected-but-rejected.
+
+Q22. Do you verify GST / Udyam / GeM?
+A. No live government API. Buyer GST would be self-declared / manual later. Claiming a private GST API is a disqualifier.
+
+Q23. Offline / village network?
+A. PRD wants a no-network mock. This demo is a local web app with seed data. If the mic or a future map fails, typed seed still tells the story.
+
+Q24. Security: do you ask for UPI PIN?
+A. Never. Never bank password. Never Aadhaar OTP. Simulated ledger only.
+
+Q25. What is actually novel?
+A. Not speech. Not the map. The compiler: local labour taxonomy + vocabulary (lal chudi) + deterministic spec matching + batch QC states + accepted-qty settlement. That is the operational product.
+
+Q26. Kill criteria (if they ask “when would you stop”)?
+A. No buyer confirms aggregation helps a real PO. Spec too vague to match. Payment story still depends on tiny booking paying everyone. Cooperative cannot do physical QC. Household identities leaked to buyers.
+
+Q27. What will you do after SIH?
+A. Field interviews with real batch sizes and prices. One-cooperative shadow pilot. Then licensed payouts. Then maybe another craft.
+
+
+==================================================
+9. 3-MINUTE SPOKEN ARC (optional, for the presentation pair)
+==================================================
+
+(1) Firozabad homes make small dheers of chudiyan. A buyer wants 10,000 identical red 2-6. Thekedar sits in the gap.
+(2) We record piles by voice or tap. Rules keep red shiny Grade B. Family 3’s neeli chudi is out, with a reason.
+(3) Collector picks up. Checker accepts some, rejects toot gayi.
+(4) Screen pays accepted × 8 minus 5%. Banner: simulated, not real money. 25% booking does not pay the gali.
+(5) Heritage: GI is paper; income is the craft staying alive. Next: real cooperative, real partner rails, not a bigger fake catalogue.
+
+
+==================================================
+10. WORDS YOU CAN SAY / MUST NOT SAY
+==================================================
+
+SAY
+- specification / spec card
+- compatible pile / IN / OUT
+- accepted quantity
+- simulated settlement
+- cooperative / collector
+- Firozabad GI / ODOP
+- Category 2 household owns the goods
+
+DO NOT SAY
+- we pay instantly from booking
+- we are on ONDC live
+- we verify Aadhaar
+- we hold escrow
+- AI decides quality
+- we sell pottery and textiles already
+- we match any design the buyer types
+
+
+==================================================
+END OF BRIEF
+If ChatGPT adds features, reply: “PRD freeze. One SKU. Fake money. No Aadhaar. No real UPI.”
+==================================================
