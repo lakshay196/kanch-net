@@ -25,14 +25,29 @@ export default function AppHeader() {
         Kanch-Net
       </Link>
       {user ? (
-        <div className="flex items-center gap-3 text-sm">
-          <span className="hidden sm:inline text-[#5c4638]">
+        <div className="flex flex-wrap items-center justify-end gap-3 text-sm">
+          <span className="text-[#5c4638]">
             {user.name}
           </span>
-          {user.role === "collector" ? (
-            <Link href="/money" className="text-[#8b1e14] underline">
-              Fake money
+          {user.role === "artisan" ? (
+            <Link href="/phone" className="text-[#8b1e14] underline">
+              Phone
             </Link>
+          ) : null}
+          {user.role === "coordinator" || user.role === "buyer" ? (
+            <Link href="/matching" className="text-[#8b1e14] underline">
+              Matching
+            </Link>
+          ) : null}
+          {user.role === "collector" ? (
+            <>
+              <Link href="/pickup" className="text-[#8b1e14] underline">
+                Pickup
+              </Link>
+              <Link href="/money" className="text-[#8b1e14] underline">
+                Fake money
+              </Link>
+            </>
           ) : null}
           <button
             type="button"

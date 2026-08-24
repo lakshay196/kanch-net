@@ -9,7 +9,7 @@ npm install
 npm run dev
 ```
 
-Open http://localhost:3000
+Open http://localhost:3000 (http://127.0.0.1:3000 also works)
 
 Login code is always **1234**
 
@@ -21,6 +21,14 @@ Login code is always **1234**
 | 9000000010 | Collector | Pickup |
 | 9000000020 | Coordinator | Matching |
 | 9000000030 | Buyer | Matching |
+
+## Shared glue (lead-owned `lib/`)
+
+Builders may **import** these; do not rewrite them in your folder:
+
+- `lib/match.ts` — Person B: IN/OUT with a simple reason (B-003 blue → out)
+- `lib/settlement.ts` — Person C: pay **accepted** qty only; mark simulated
+- `data/starter-list.json` — demo users, ORD-001, starter piles
 
 ## Team files
 
