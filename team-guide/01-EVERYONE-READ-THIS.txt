@@ -1,6 +1,28 @@
 KANCH-NET — EVERYONE READ THIS
-This file is for the whole team. It is not a coding lesson.
-Builders: send this file + your role file to ChatGPT.
+This file is for the whole team.
+Builders: upload THIS file + the PRD + the setup file + YOUR role file into ChatGPT.
+
+--------------------------------------------------
+WHAT YOU UPLOAD TO CHATGPT
+--------------------------------------------------
+
+Builders (Person A, B, C) — 4 files:
+1) 01-EVERYONE-READ-THIS.txt   (this file)
+2) 08-KANCH-NET-PRD.txt        (what we are building)
+3) 09-CHATGPT-ZERO-SETUP.txt   (how to install GitHub and Antigravity)
+4) YOUR role file              (03 or 04 or 05)
+
+Then paste the big block inside 09 (from PASTE INTO CHATGPT to END PASTE).
+ChatGPT is the teacher. Antigravity writes code.
+
+Presentation pair — 3 files:
+1) 01-EVERYONE-READ-THIS.txt
+2) 08-KANCH-NET-PRD.txt
+3) 06-ROLE-PRESENTATION.txt
+No Antigravity.
+
+GitHub (already exists):
+https://github.com/lakshay196/kanch-net
 
 --------------------------------------------------
 WHAT WE ARE MAKING
@@ -17,6 +39,7 @@ Our app:
 - a fake money page shows what each family would get
 
 We are NOT making real payments, Amazon, or Aadhaar.
+Read 08-KANCH-NET-PRD.txt for the full product. Do not add extra features from the PRD that are not in your role.
 
 --------------------------------------------------
 WHO DOES WHAT
@@ -24,7 +47,7 @@ WHO DOES WHAT
 
 LEAD — uses Cursor, not Antigravity
 - Already made the empty website, login, and starter list
-- Puts the project on GitHub and invites you
+- GitHub + invites
 - Helps if you are stuck
 - Clicks the demo at the end
 
@@ -38,7 +61,7 @@ PERSON C — PICKUP + FAKE MONEY (ChatGPT + Antigravity)
 - Pickup tick-list, quality check, fake payment table.
 
 PRESENTATION PAIR — ChatGPT only
-- Slides and speech. No Antigravity. No code.
+- Slides and speech. No code.
 
 --------------------------------------------------
 THE ONE STORY
@@ -76,7 +99,7 @@ HOW YOU WORK AT THE SAME TIME
 
 Do not wait for each other. The starter list is already in the project.
 
-Lead helps everyone (GitHub + unstuck).
+Lead helps everyone.
 A helps B later (new piles).
 B helps C later (which piles are in the order).
 C helps the demo (pickup → fake money).
@@ -88,33 +111,13 @@ Do not edit another person’s folder. See WHO-OWNS-WHAT.txt
 CHATGPT vs ANTIGRAVITY
 --------------------------------------------------
 
-ChatGPT = teacher. Keep it open on one side of the screen.
-Antigravity = writes code in the kanch-net folder. Other side of the screen.
+ChatGPT = teacher. Left side of the screen.
+Antigravity = writes code in the kanch-net folder. Right side.
+
+First: paste the setup prompt from 09 (zero-level clicks).
+Then: YELLOW BOX 2 in your role file, then the Antigravity box.
 
 Never let Antigravity “make a new app” or “redesign everything”.
-
---------------------------------------------------
-FIRST TIME: GITHUB + ANTIGRAVITY
-(builders A, B, C — do this before any coding)
---------------------------------------------------
-
-The lead will send you a GitHub LINK and invite your GitHub email.
-
-You must:
-1. Accept the invite (check email / GitHub notifications)
-2. Clone THAT project (download the lead’s folder)
-3. Open THAT folder in Antigravity
-4. Every time you sit down to work: Pull first (get latest files)
-
-You must NOT:
-- create a new empty project
-- open a random Desktop folder
-- start coding before the kanch-net folder is open
-
-If you do not know how, paste YELLOW BOX 1 from your role file into ChatGPT.
-ChatGPT will tell you what to click, one step at a time.
-You can also paste the GitHub link into Antigravity and ask:
-"Clone this GitHub link and open the kanch-net folder. I am a beginner. Click by click."
 
 --------------------------------------------------
 IF A WORD LOOKS SCARY
@@ -125,7 +128,7 @@ Ask ChatGPT: "Explain like I am new. Can the coding AI just do this for me?"
 Clone = copy the project from GitHub onto your computer
 Pull = download new files from GitHub before you work
 Push = send your work back to GitHub
-Repo / repository = the GitHub project
-OTP / login code = 1234
-Starter list / seed = pretend piles already in the app
+Repo = the GitHub project
+Login code = 1234
+Starter list = pretend piles already in the app
 Batch / pile = one family’s bangles (B-001)

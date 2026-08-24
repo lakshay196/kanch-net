@@ -18,6 +18,6 @@ Person C (Antigravity) owns:
 - app/pickup/
 - app/money/
 
-Before you work: Pull.
-After you work: Push.
+Before you work: Pull (see team-guide/09-CHATGPT-ZERO-SETUP.txt).
+After you work: Push only your folder.
 If GitHub fights you: stop and message the lead.

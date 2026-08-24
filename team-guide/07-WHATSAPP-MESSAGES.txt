@@ -1,40 +1,41 @@
 COPY-PASTE WHATSAPP MESSAGES
 
-Replace PASTE_LINK with your real GitHub link after the repo is live.
-Replace the two file names if needed. Files are in the repo folder team-guide/
-You can also WhatsApp those txt files from your computer.
+GitHub: https://github.com/lakshay196/kanch-net
+Files live in the repo folder team-guide/ and also on your computer.
 
 --------------------------------------------------
 MESSAGE 1 — WHOLE GROUP
 --------------------------------------------------
 
-We are making Kanch-Net.
+We are making Kanch-Net. Home workers make small piles of bangles. Buyer wants one big matching pile. App helps combine matching piles, check them, show fake money. Not real UPI.
 
-Home workers make small piles of bangles. Buyer wants one big matching pile. Our app helps a local group combine matching piles, check them, and show fake money. Not real UPI.
+I use Cursor.
+A, B, C use ChatGPT (teacher) + Antigravity (code) on my GitHub:
+https://github.com/lakshay196/kanch-net
 
-I use Cursor for the empty website.
-A, B, C use ChatGPT (teacher) + Antigravity (code) on MY GitHub project.
-Presentation pair = slides only. No code.
+I will send you these files:
+- 01-EVERYONE-READ-THIS
+- 08-KANCH-NET-PRD (what we are building)
+- 09-CHATGPT-ZERO-SETUP (install GitHub + Antigravity, every click)
+- YOUR role file
 
-I will send you 2 files + later a GitHub link.
-Open ChatGPT. Upload both files. Paste YELLOW BOX 1 from YOUR file first (it will help you clone and open the folder).
+Open ChatGPT. Upload ALL of those files. Open 09, copy the block PASTE INTO CHATGPT to END PASTE, paste it, then write: I am Person A (or B or C).
+
+ChatGPT will teach one click at a time. Reply DONE after each step. Screenshot if stuck.
 Do not make a new project.
-If a word is scary, ask ChatGPT to explain like you are new.
 Stuck 20 minutes = message me.
 
 --------------------------------------------------
-MESSAGE 2 — AFTER GITHUB EXISTS (builders)
+MESSAGE 2 — BUILDERS AFTER INVITE
 --------------------------------------------------
 
-GitHub link: PASTE_LINK
-
-1) Make a GitHub account if you don’t have one
-2) Accept my invite in your email
-3) Open ChatGPT, upload 01-EVERYONE + YOUR role file
-4) Paste YELLOW BOX 1 and also paste this same GitHub link when it asks
-5) ChatGPT will help you clone and open kanch-net in Antigravity
-6) Pull every time before you work
-7) Then paste YELLOW BOX 2 in ChatGPT, and the Antigravity box in Antigravity
+1) Make a GitHub account if needed
+2) Accept my invite in email (github.com/lakshay196/kanch-net)
+3) ChatGPT → upload 01, 08-PRD, 09-SETUP, YOUR role
+4) Paste the big block from 09
+5) Extra line: I am Person A / B / C
+6) Follow ChatGPT: clone THIS repo, open kanch-net in Antigravity, pull, then code
+7) After setup: YELLOW BOX 2 in your role, then Antigravity box
 
 Do not create a new empty app.
 
@@ -42,38 +43,35 @@ Do not create a new empty app.
 MESSAGE 3 — PERSON A
 --------------------------------------------------
 
-You are Person A. Files: 01-EVERYONE + 03-ROLE-A-PHONE.
-Only job: family phone screens. Mic is extra.
-ChatGPT yellow box 1 first.
+You are Person A. Files: 01, 08-PRD, 09-SETUP, 03-ROLE-A-PHONE.
+Only job: family phone screens. Mic extra.
 
 --------------------------------------------------
 MESSAGE 4 — PERSON B
 --------------------------------------------------
 
-You are Person B. Files: 01-EVERYONE + 04-ROLE-B-MATCHING.
-Only job: order + IN + OUT with reason.
-ChatGPT yellow box 1 first.
+You are Person B. Files: 01, 08-PRD, 09-SETUP, 04-ROLE-B-MATCHING.
+Only job: IN / OUT + reason.
 
 --------------------------------------------------
 MESSAGE 5 — PERSON C
 --------------------------------------------------
 
-You are Person C. Files: 01-EVERYONE + 05-ROLE-C-PICKUP-AND-MONEY.
-Pickup, quality, fake money. Type B-001. No camera.
-ChatGPT yellow box 1 first.
+You are Person C. Files: 01, 08-PRD, 09-SETUP, 05-ROLE-C-PICKUP-AND-MONEY.
+Pickup, quality, fake money. Type B-001.
 
 --------------------------------------------------
 MESSAGE 6 — PRESENTATION PAIR
 --------------------------------------------------
 
-You two: 01-EVERYONE + 06-ROLE-PRESENTATION.
-ChatGPT only. No Antigravity. No GitHub required today.
-Do not write on slides that we do real payments.
+You two: 01, 08-PRD, 06-ROLE-PRESENTATION.
+ChatGPT only. Upload those 3 files. Paste the yellow box in 06.
+No Antigravity. Do not write that we do real payments.
 
 --------------------------------------------------
 MESSAGE 7 — IF SOMEONE PANICS
 --------------------------------------------------
 
-You do not need to understand every computer word.
-ChatGPT tells you what to click. Antigravity writes code.
-Do YELLOW BOX 1 only today if setup is hard. Message me a screenshot.
+You do not need to know computer theory.
+Upload the files. Paste 09. Let ChatGPT tell you the next ONE click.
+Screenshot me.

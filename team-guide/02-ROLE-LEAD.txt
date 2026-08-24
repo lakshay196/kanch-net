@@ -1,55 +1,12 @@
 KANCH-NET — YOUR ROLE: LEAD
-You use CURSOR. Your teammates use ChatGPT + Antigravity.
-You make the empty website (already started in this repo), put it on GitHub, invite people, run the demo.
+You use CURSOR. Teammates use ChatGPT + Antigravity.
 
---------------------------------------------------
-YOUR JOB
---------------------------------------------------
+Send builders 4 files: 01, 08-PRD, 09-SETUP, their role.
+GitHub: https://github.com/lakshay196/kanch-net
 
-Empty house:
-- one website
-- login with phone + code 1234
-- starter list of pretend piles
-- empty pages /phone /matching /pickup /money
+Invite: Settings → Collaborators.
 
-Then stop taking their screens.
-Help. Merge. Demo.
+WhatsApp after invite (also in 07):
+"Upload 01, 08-PRD, 09-SETUP, and YOUR role into ChatGPT. Paste the big block inside 09. Then write: I am Person A (or B or C). GitHub: https://github.com/lakshay196/kanch-net"
 
---------------------------------------------------
-WHO HELPS WHOM
---------------------------------------------------
-
-You help A, B, C, slides pair.
-They finish their screens so your demo works.
-
---------------------------------------------------
-YELLOW BOX FOR CHATGPT (optional teacher for you)
---------------------------------------------------
-
-I am the Kanch-Net team lead. I use Cursor, not Antigravity. Three teammates are beginners. They use ChatGPT as teacher and Antigravity to code. Two others only make slides.
-
-Please:
-1) Today plan in simple English
-2) What to say in a 20-minute meeting
-3) How to invite teammates on GitHub and what WhatsApp text to send with the repo link
-4) No hard words. Easy version first.
-5) Do not add real payments or Aadhaar
-
---------------------------------------------------
-GITHUB INVITE — SIMPLE
---------------------------------------------------
-
-After the repo exists:
-GitHub website → your kanch-net project → Settings → Collaborators → Add people
-Invite their GitHub username or email.
-
-Then WhatsApp:
-"Accept the GitHub invite in your email. Then open ChatGPT, upload the two files I sent, paste YELLOW BOX 1. It will help you clone this link and open the folder in Antigravity: PASTE_LINK
-Do not make a new project. Pull every time before you work."
-
---------------------------------------------------
-YOU DO NOT PASTE AN ANTIGRAVITY BOX
---------------------------------------------------
-
-Your coding AI is Cursor. The empty website is this repo.
-Do not tell teammates to build a second website.
+You do not use Antigravity. Do not let them build a second website.

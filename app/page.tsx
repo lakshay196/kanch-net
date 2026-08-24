@@ -18,11 +18,14 @@ export default function HomePage() {
         <LoginForm />
       </div>
       <div className="mt-6 space-y-1 text-sm text-[#5c4638]">
-        <p>9000000001 family 1 → phone page</p>
-        <p>9000000003 family 3 (blue pile) → phone page</p>
-        <p>9000000010 collector → pickup</p>
-        <p>9000000020 coordinator → matching</p>
-        <p>9000000030 buyer → matching</p>
+        <p className="font-semibold text-[#2a1810]">
+          Fake demo phones. Type one in the box above, then press Enter.
+        </p>
+        <p>9000000001 = Family 1 (home worker phone page)</p>
+        <p>9000000003 = Family 3, the blue pile that should be rejected</p>
+        <p>9000000010 = Collector (pickup page)</p>
+        <p>9000000020 = Coordinator (matching page)</p>
+        <p>9000000030 = Buyer (matching page)</p>
       </div>
     </main>
   );

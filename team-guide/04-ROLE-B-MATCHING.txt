@@ -4,6 +4,8 @@ You make the brain screen: which piles fit the buyer, and WHY.
 Lead uses Cursor. You use ChatGPT (teacher) + Antigravity (code).
 You work in the lead’s GitHub folder. You do not make a new app.
 
+GitHub: https://github.com/lakshay196/kanch-net
+
 --------------------------------------------------
 YOUR JOB
 --------------------------------------------------
@@ -40,53 +42,39 @@ EASY VERSION
 One page. No map. Top order, middle IN, bottom OUT.
 
 --------------------------------------------------
-HOW TO USE THE TWO AIS
+HOW TO START (zero level)
 --------------------------------------------------
 
-ChatGPT left, Antigravity right.
-Day 1: YELLOW BOX 1 first. Then YELLOW BOX 2. Then ANTIGRAVITY BOX.
-If Antigravity builds the whole app, say: only app/matching.
+1. Upload 4 files into ChatGPT (paperclip):
+   - 01-EVERYONE-READ-THIS.txt
+   - 08-KANCH-NET-PRD.txt
+   - 09-CHATGPT-ZERO-SETUP.txt
+   - this file (04-ROLE-B-MATCHING.txt)
+2. Open 09. Copy from >>> PASTE INTO CHATGPT <<< to >>> END PASTE <<<
+3. Paste into ChatGPT.
+4. Send one more line: I am Person B. I only build app/matching.
+5. Follow ChatGPT. One click. Then reply DONE. Send screenshots if stuck.
+6. When kanch-net is open in Antigravity, paste YELLOW BOX 2 below.
+7. Then paste the ANTIGRAVITY BOX into Antigravity.
+
+If Antigravity tries to build the whole app, say: NO. Only app/matching.
 
 --------------------------------------------------
-YELLOW BOX 1 — PASTE IN CHATGPT FIRST
-(setup GitHub + Antigravity. I am a beginner.)
+YELLOW BOX 2 — PASTE IN CHATGPT AFTER SETUP IS DONE
 --------------------------------------------------
 
-I am Person B on a student team. I am a beginner. I have never used GitHub or Antigravity (or I have used them very little).
+I am Person B. Setup is done. kanch-net is open in Antigravity. I am still a beginner.
 
-The team lead sent me:
-- two files: 01-EVERYONE-READ-THIS.txt and this Person B role file
-- a GitHub link I will paste here: PASTE_THE_GITHUB_LINK_HERE
-
-I must use the lead’s project. I must NOT create a new empty project.
-
-Please be my teacher. Simple English. One click at a time, like I am 15.
-
-Help me:
-1) GitHub account if needed
-2) Accept the invite
-3) Install Antigravity from antigravity.google if needed
-4) Clone the GitHub link (Antigravity “Clone Repository” if it exists)
-5) Open the kanch-net folder in Antigravity — not a new project
-6) Pull before every work session
-7) ChatGPT on one half of the screen, Antigravity on the other
-8) When setup is done, tell me to paste YELLOW BOX 2
-
-Wait for screenshots. Do not tell me to start a new app.
-
---------------------------------------------------
-YELLOW BOX 2 — PASTE IN CHATGPT AFTER THE FOLDER IS OPEN
---------------------------------------------------
-
-I am Person B. kanch-net is already open in Antigravity. I am a beginner.
-I make ONLY the matching screen in app/matching.
+You already have the PRD and my role. I make ONLY the matching screen in app/matching.
 
 Please be my teacher in simple English:
-1) Small steps for today
+1) Small steps for today. One step, then wait for DONE
 2) What to paste into Antigravity
 3) Easy version: two lists + reasons. No map
 4) Simple if-this-then-that rules, not AI matching
 5) Do not let me build phone, pickup, or money
+6) Remind me: pull first, then push only app/matching
+7) Follow the PRD: one order ORD-001, explain why a pile is out
 
 --------------------------------------------------
 ANTIGRAVITY BOX — PASTE ONLY AFTER KANCH-NET FOLDER IS OPEN
@@ -113,4 +101,4 @@ Remaining = 10000 minus IN quantities. Do not count a pile twice.
 Hide family phone numbers.
 No map. Area names are enough.
 
-Before you edit: pull. After: tell me how to push only my files.
+Before you edit: tell me to pull. After: tell me GitHub Desktop clicks or git commands to push only app/matching.

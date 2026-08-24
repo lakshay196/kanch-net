@@ -3,6 +3,16 @@ You do NOT write the app. You do NOT use Antigravity.
 You use ChatGPT only, plus screenshots from the lead later.
 
 --------------------------------------------------
+WHAT YOU UPLOAD TO CHATGPT
+--------------------------------------------------
+
+1) 01-EVERYONE-READ-THIS.txt
+2) 08-KANCH-NET-PRD.txt
+3) this file (06-ROLE-PRESENTATION.txt)
+
+Then paste the YELLOW BOX below.
+
+--------------------------------------------------
 YOUR JOB
 --------------------------------------------------
 
@@ -15,7 +25,6 @@ WHO HELPS YOU
 
 Lead: the one story + screenshots.
 A, B, C: one screenshot each.
-You help judges understand Firozabad, not computer words.
 
 Do not invent features the app does not have.
 Do not write “we pay instantly from 25% booking”.
@@ -30,7 +39,7 @@ What we built: phone → keep matching piles → pickup and quality → fake pay
 
 Heritage: if people cannot earn, the craft dies.
 
-Honest limits (this looks smart):
+Honest limits:
 - A person does quality check, not magic AI
 - Money on screen is a demo
 - We are not the government
@@ -40,14 +49,19 @@ YELLOW BOX FOR CHATGPT
 --------------------------------------------------
 
 We are 2 students making ONLY the presentation for Kanch-Net. We are not coding.
+We uploaded the everyone file, the full PRD, and this role file.
+
+Read the PRD. Do not add features the SIH prototype does not have.
 
 Write simple, strong English:
 1) 8-10 slides
 2) A 3-minute speech
-3) Judge Q&A
+3) Judge Q&A from the PRD (ONDC, QC, escrow, Category 3, Heritage)
 4) Do not claim real payments, Aadhaar, or that a small booking pays everyone
 5) Lead with craft + income
 6) Demo story: 10000 red bangles, one blue pile rejected, pay only accepted pieces
+
+If a slide disagrees with the PRD, follow the PRD.
 
 --------------------------------------------------
 SPLIT

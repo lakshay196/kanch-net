@@ -24,6 +24,10 @@ Login code is always **1234**
 
 ## Team files
 
-Read `team-guide/` and `WHO-OWNS-WHAT.txt`.
+Send builders these from `team-guide/`:
+- `01-EVERYONE-READ-THIS.txt`
+- `08-KANCH-NET-PRD.txt`
+- `09-CHATGPT-ZERO-SETUP.txt`
+- their role file
 
 Lead uses Cursor. Person A, B, C use ChatGPT (teacher) + Antigravity (code) on this same repo.

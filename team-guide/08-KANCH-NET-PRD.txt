@@ -1,0 +1,568 @@
+KANCH-NET — PRODUCT REQUIREMENTS (attach this in ChatGPT)
+This is what we are building. ChatGPT: treat this as the product truth.
+Do not tell a teammate to build the whole product. Each person has ONE role.
+Locked: one demo product (red size 2-6 glass bangles), fake money only, no Aadhaar, no real UPI, no escrow, no extra features.
+SIH student prototype.
+
+===== FULL PRD STARTS HERE =====
+
+PRODUCT REQUIREMENTS DOCUMENT
+Kanch-Net
+Voice-first production aggregation for Firozabad glass artisans
+Primary theme: Heritage & Culture
+Product stage: SIH 2026 software-only prototype
+Status: Final corrected scope — implementation ready
+Prepared on: 22 August 2026
+Primary user: Home-based glass-artisan households that own their finished goods
+Deployment partner: Local cooperative, producer collective or trusted aggregator
+Core promise  Kanch-Net helps many small artisan households behave like one reliable supplier: compatible batches are pooled into a buyer-ready lot, traced through collection and quality checks, and settled transparently.
+Product boundary  The SIH prototype does not hold money, operate real escrow, issue loans, authenticate Aadhaar, verify GST through a private API or guarantee buyer orders. Payments, identity and material financing are simulated as auditable workflows for later execution through authorised partners.
+Executive summary
+Firozabad's home-based glass artisans often produce quantities too small for wholesale buyers. Even when a household owns its material and finished goods, it may still depend on a local middleman for market access. Kanch-Net records household inventory by voice, matches only compatible products, combines them into traceable bulk lots and coordinates collection, quality confirmation and transparent settlement.
+The corrected MVP removes the earlier cash-flow mistake: a 20–30% buyer booking amount cannot fund 100% immediate artisan payment. Real settlement therefore follows accepted milestones through a licensed payment partner, while the prototype demonstrates the money logic using a mock ledger. A Lot Specification Card and batch-level quality traceability are mandatory, because quantity without consistency has no value to a wholesale buyer.
+
+SIH form-ready summary
+Problem statement: Home-based Firozabad glass artisans who own their finished goods remain dependent on middlemen because their individual output is too small and inconsistent for direct wholesale orders, and no low-literacy system combines compatible household batches into traceable, buyer-ready lots.
+Short solution: Kanch-Net is a voice-first cooperative operating system that records artisan inventory in local terminology, matches it against a buyer's quality specification, pools compatible batches and tracks collection, quality and settlement through a transparent ledger. It does not replace physical quality control or licensed payment partners; it gives the cooperative the software needed to coordinate them.
+1. Product context
+1.1 Ground-level problem
+One household may produce only a small batch, while a buyer wants a large, standardised lot.
+The buyer cannot call, inspect and settle with dozens of households separately.
+The artisan may not know the buyer's exact size, colour, finish, packaging and delivery requirements.
+A low-literacy household cannot be expected to maintain a complex catalogue or spreadsheet.
+When quality, quantity and payment are not traceable, both sides rely on a trusted middleman.
+1.2 Heritage justification
+Firozabad Glass is a registered geographical indication, valid through February 2029, and glass products are an official Firozabad ODOP category. The product is therefore positioned as economic infrastructure for a living craft, not as a generic marketplace with a heritage label.
+Pitch insight  A craft survives only when the people carrying the skill can earn reliably from it.
+1.3 Worker taxonomy
+Category
+Relationship to product
+Kanch-Net scope
+1. Factory or workshop wage worker
+Does not own material or output
+Out of scope; this is primarily a labour-rights problem.
+2. Independent household producer
+Buys material and owns finished goods
+Primary user; inventory can be pooled and sold.
+3. Material-dependent household
+Middleman supplies material and normally owns output
+Future/conditional; may join only through a lawful cooperative input-allocation programme tied to an order.
+
+1.4 Example
+A wholesale buyer needs 10,000 red bangles of one size and finish. No single household can supply that quantity. Twenty households record their available batches by voice. Kanch-Net excludes incompatible colours or sizes, groups the matching batches, assigns batch IDs and prepares one collection plan. The cooperative checks accepted quantity and quality before the payment partner settles each accepted batch.
+1.5 Evidence still required
+Ten to twenty direct artisan interviews using the final survey guide
+Real household batch sizes and production time
+Current artisan selling price and downstream buyer price for the same SKU
+Typical rejection, breakage and payment-delay rates
+At least three buyer interviews on minimum order quantity and quality tolerance
+2. Users, goals and non-goals
+2.1 Primary personas
+Persona
+Need
+Main product value
+Category 2 household artisan
+Sell a small owned batch without complex paperwork
+Voice entry, clear acceptance and transparent settlement
+Cooperative coordinator
+Turn scattered supply into one reliable order
+Specification matching, collection and exception handling
+Wholesale buyer
+Receive a consistent lot without managing many sellers
+One specification, one lot view and batch traceability
+Collector / quality checker
+Record what was collected and accepted
+Offline checklist, batch ID and evidence capture
+
+2.2 MVP goals
+Log one household batch in under 60 seconds using speech or assisted entry.
+Match household batches only when mandatory specification fields are compatible.
+Create a buyer-ready lot with household-level traceability.
+Record collected, accepted, rejected and damaged quantities.
+Show a transparent simulated settlement for every accepted batch.
+Work with mock payments and no protected government API.
+2.3 Non-goals
+A national e-commerce marketplace or ONDC seller application
+Real escrow, lending, UPI collection or money custody
+Automated legal GI-authorised-user registration
+Custom dialect ASR training in 36 hours
+Replacing physical quality inspection
+Solving wages or conditions for factory workers
+Guaranteeing that Category 3 households become independent producers
+3. Corrected operating model
+3.1 Order-first flow
+The buyer or cooperative creates a Lot Specification Card.
+Artisans record available or producible batches using voice or assisted entry.
+The matching engine accepts only specification-compatible batches.
+The cooperative confirms the proposed lot and collection cluster.
+The collector verifies household quantity and basic visible quality, then assigns a batch status.
+At consolidation, the cooperative records final accepted, rejected and damaged quantity.
+The settlement simulator allocates buyer payment, material deduction and platform/co-op fee per accepted batch.
+In production, a licensed payment partner—not Kanch-Net—executes settlement.
+3.2 Lot Specification Card
+Field
+Example
+Matching rule
+Product / local term
+Red glass bangle / local SKU name
+Exact mapped product family
+Size
+2–6
+Exact unless buyer declares tolerance
+Colour
+Ruby red
+Exact mapped colour family
+Finish / design
+Plain glossy
+Exact approved finish
+Quality grade
+Grade B
+Equal or better than minimum
+Quantity
+10,000 units
+Sum of accepted compatible batches
+Packaging
+100 units per sleeve
+Required before final acceptance
+Sample reference
+Photo / approved sample ID
+Human comparison; AI is advisory only
+Delivery window
+10–12 September
+Production and collection must fit
+
+3.3 Batch traceability
+Every household submission receives a batch ID and QR code.
+The batch stores claimed quantity, collection quantity, accepted quantity and rejection reason.
+Photographs are supporting evidence, not proof of legal ownership or perfect quality.
+The buyer sees aggregated lot data; household personal details remain hidden unless required for settlement.
+A rejected batch remains attributable so the cooperative can resolve the issue fairly.
+3.4 Corrected payment model
+Removed claim  A 20–30% booking amount cannot fund full immediate payment to all artisans. The product must not promise this.
+The booking amount reserves capacity and may support permitted order preparation. Artisan settlement is released only against accepted milestones and available cleared funds. The exact production arrangement must be agreed by the cooperative, buyer and licensed payment partner.
+Milestone
+System record
+Money handling
+Order booking
+Buyer commitment and configurable booking amount
+Mock ledger in SIH; authorised partner in production
+Household pickup
+Collected quantity and provisional status
+No promise of full payment unless cleared funds cover it
+Consolidation QC
+Final accepted/rejected quantity
+Accepted batch becomes settlement-eligible
+Buyer balance
+Remaining obligation
+Collected through licensed partner
+Settlement
+Artisan amount, deductions and co-op fee
+Direct payout by authorised partner
+
+3.5 Category 3 material allocation
+The prototype may calculate a material requirement against a confirmed order, but it must not present this as an app-issued loan. A future cooperative may procure material centrally and allocate it for an already-specified order, subject to legal, accounting and working-capital review. The platform records quantity, cost, consent and deduction; a real partner provides the funds and bears the financial responsibility.
+4. SIH MVP scope
+4.1 Four must-build modules
+Voice inventory: speech-to-text plus a small local terminology dictionary and confirmation screen.
+Specification matching: deterministic compatibility rules and a buyer-ready aggregate lot.
+Collection and quality: batch QR, pickup checklist, accepted/rejected quantities and reasons.
+Settlement simulator: booking, accepted value, transparent fee, optional material deduction and artisan payout ledger.
+4.2 P0 functional requirements
+ID
+Requirement
+FR-01
+Create buyer Lot Specification Card with all mandatory fields.
+FR-02
+Capture artisan batch by voice or assisted form and require confirmation.
+FR-03
+Map approved local terminology to canonical products, colours and units.
+FR-04
+Reject or flag incompatible batches with a human-readable reason.
+FR-05
+Aggregate compatible quantities and show remaining order quantity.
+FR-06
+Generate a batch ID and QR code for each accepted household batch.
+FR-07
+Record collection quantity, visible condition and collector confirmation.
+FR-08
+Record consolidation QC: accepted, rejected, damaged and reason.
+FR-09
+Calculate settlement only from final accepted quantity.
+FR-10
+Display buyer value, material deduction, co-op fee and artisan payout separately.
+FR-11
+Support a no-network mock demo with seeded data.
+FR-12
+Show clear labels that payment, identity and GST checks are simulated.
+
+4.3 P1 after SIH
+Community vouching and graduated batch limits
+Fair rotation when several compatible households compete for limited quantity
+Buyer trial-order limits and dispute workflow
+Rule-admin screen for local terms, units and quality tolerances
+Regional voice prompts and offline sync
+Cooperative working-capital partner integration after legal review
+4.4 Explicitly excluded from MVP
+Live Aadhaar OTP authentication; use ordinary mobile OTP and mock verification
+Live GST API; record GSTIN and use a labelled manual/mock verification state
+Real escrow or collection of buyer funds
+Real material advances or credit underwriting
+GeM, ODOP, GI Registry or ONDC write integration
+Custom speech-model training
+Advanced vehicle-route optimisation
+Wage benchmarking; quality and settlement correctness take priority
+5. Key user journeys
+5.1 Artisan logs a batch
+Select language and tap the microphone.
+Say product, size, colour, quantity and ready date.
+The app maps known local terms and highlights uncertain fields.
+Artisan or facilitator confirms the canonical values.
+The app shows matching orders or stores the batch as available inventory.
+5.2 Cooperative builds a lot
+Open a buyer specification and view compatible supply.
+Review exclusions and reasons; never hide a mismatch.
+Select compatible batches using fair-rotation guidance.
+Freeze a proposed lot and create the collection list.
+Generate household batch QR codes and cluster view.
+5.3 Collector and QC
+Scan the batch ID at the household.
+Record collected quantity and visible damage.
+Scan again at the consolidation point.
+Record final accepted, rejected and damaged quantity with reason.
+Only accepted quantity enters the settlement calculation.
+5.4 Buyer and settlement
+Buyer sees the lot specification, aggregate accepted quantity and status.
+The SIH demo simulates booking and balance events.
+The ledger calculates household payouts using accepted quantities.
+Every deduction is visible; the platform never silently changes the rate.
+
+6. Matching and quality logic
+6.1 Deterministic matching
+For the MVP, matching must be rules-based, not generative AI. Each mandatory attribute produces match, mismatch or review. A batch joins the lot only when every mandatory field is match or a coordinator approves an allowed tolerance.
+Rule result
+Meaning
+Action
+Match
+Field satisfies buyer specification
+May continue
+Mismatch
+Field is outside allowed specification
+Exclude from this lot
+Review
+Speech/OCR mapping is uncertain or tolerance unclear
+Human confirmation required
+Not provided
+Mandatory field missing
+Return to artisan/facilitator
+
+6.2 Quality states
+Declared: artisan-stated quantity and specification
+Collected: collector-confirmed quantity and visible condition
+Accepted: consolidation checker approves quantity for the buyer lot
+Rejected: excluded with standard reason code and optional note
+Disputed: artisan and checker disagree; settlement is paused for that batch
+6.3 Minimum rejection reasons
+Wrong size, colour, product or finish
+Visible damage or breakage
+Quantity shortfall
+Packaging mismatch
+Sample mismatch requiring buyer review
+Duplicate or incorrect batch ID
+6.4 Fairness requirements
+A rejected batch must show the reason to the artisan or facilitator.
+Coordinator overrides must record the actor, time and explanation.
+The algorithm must not rank households using caste, religion, gender or unrelated identity fields.
+When supply exceeds order quantity, the MVP shows a fair-rotation recommendation; the coordinator confirms it.
+7. Trust, identity and settlement boundaries
+7.1 Artisan onboarding
+Use ordinary phone OTP for the prototype.
+Use community vouching as a social trust signal, not proof of legal identity.
+Do not store full Aadhaar numbers or request Aadhaar OTP.
+Future offline Aadhaar verification requires compliant OVSE processes and consent.
+7.2 Buyer onboarding
+Collect organisation/contact details and GSTIN when relevant.
+Label GST status as self-declared, manually reviewed or future verified.
+Do not claim an open GST verification API unless the team has documented access.
+Use trial-order limits and booking commitment as future trust mechanisms.
+7.3 Payment boundary
+Mandatory wording  Kanch-Net provides order, quality and settlement instructions. It does not hold buyer funds in the SIH prototype. Production payments must be executed by a bank or authorised payment partner under an approved commercial arrangement.
+7.4 Transparent ledger
+For each household: accepted quantity × agreed unit price = gross value. Then show material cost, cooperative/service fee and other expressly authorised deductions. Net payout is never calculated from declared or merely collected quantity.
+
+8. Technical design
+8.1 Free-tier stack
+Layer
+Tool
+Use
+Frontend
+Next.js + Tailwind CSS PWA
+Mobile/CSC UI and offline cache
+Backend
+Python FastAPI
+Validation, matching and settlement simulation
+Database
+PostgreSQL / Supabase free tier
+Orders, batches, events and terminology
+Speech
+Whisper local or Bhashini sandbox
+Speech-to-text; always confirm parsed fields
+Mapping
+Leaflet + OpenStreetMap
+Cluster visualisation without paid map keys
+QR
+Open-source QR library
+Batch identity and scan workflow
+Files
+Local/minimal object storage
+Sample images; short retention
+Deployment
+Vercel/Render/free local demo
+No paid dependency required for judging
+
+8.2 Architecture
+PWA captures a buyer specification or artisan voice entry.
+Speech adapter returns text; terminology mapper proposes canonical values.
+User confirms all critical values before saving.
+Matching service compares confirmed batch fields with buyer rules.
+Lot service sums compatible quantities and creates collection assignments.
+Event service records declared, collected, accepted, rejected and settled states.
+Ledger service simulates booking, balance and household payout events.
+8.3 Core data objects
+Object
+Important fields
+Household
+household_id, phone, locality, trust state, consent
+Buyer order
+specification, quantity, price, delivery window, status
+Batch
+household, canonical attributes, quantities, ready date, batch ID
+Lot
+order, included batches, aggregate quantity, cluster, state
+QC event
+batch, stage, accepted/rejected quantity, reason, actor, time
+Ledger event
+order, batch, event type, amount, status, simulated flag
+Term mapping
+spoken/local term, canonical value, language, reviewer
+Audit event
+actor, action, object, before/after summary, timestamp
+
+8.4 Privacy and security
+Collect the minimum household information required for coordination.
+Hide personal household details from buyers by default.
+Separate payment simulation from real banking credentials.
+Never request UPI PIN, bank password or Aadhaar OTP.
+Validate file types and delete sample images after the disclosed retention period.
+Log coordinator overrides and settlement edits.
+9. Success metrics
+Metric
+SIH target
+Pilot target
+Batch logging time
+≤ 60 seconds
+Median ≤ 45 seconds
+Critical-field confirmation
+100%
+100%
+Incorrect automatic inclusion
+0 in curated test cases
+< 1% after human review
+Batch traceability
+100% of demo batches
+100% of accepted batches
+Settlement explainability
+Every rupee attributable
+Zero unexplained deductions
+Offline demo completion
+All core flows
+Defined local-sync recovery rate
+Artisan comprehension
+4/5 test users explain status
+≥ 80% understand next step
+
+9.1 Acceptance tests
+A red size 2–6 batch cannot enter an order requiring blue size 2–4.
+An uncertain spoken unit produces review, not silent conversion.
+The same batch ID cannot be counted twice in one lot.
+Rejected quantity never enters the payout calculation.
+Material deduction and service fee appear separately.
+A simulated payment is visibly labelled and cannot be mistaken for a real transfer.
+The core demo works if speech or map services are unavailable by using typed seed data.
+
+10. SIH 36-hour execution plan
+10.1 Build schedule
+Hours
+Work
+Exit condition
+0–3
+Freeze one SKU, terminology, buyer spec and demo data
+No unresolved product fields
+3–10
+PWA screens and database
+Create order and confirmed batch
+3–10
+Matching API and seed data
+Compatible/incompatible results explainable
+10–16
+Voice adapter and term mapping
+One Hindi/local-term input completes
+16–22
+Lot, QR and collection/QC
+Batch moves declared → accepted/rejected
+22–27
+Settlement simulator
+Accepted quantities produce transparent payouts
+27–31
+Offline fallback, security labels and tests
+Core path survives API failure
+31–34
+UI polish and seeded scenario
+Three-minute repeatable demo
+34–36
+Pitch rehearsal and backup recording
+Every teammate answers cash-flow/QC questions
+
+10.2 Cut order if behind
+Remove map-route polish; retain a simple locality cluster list.
+Replace live speech call with uploaded/recorded text plus term-mapping demonstration.
+Remove fair-rotation UI; keep the audit field in the data model.
+Remove Category 3 material allocation screen; keep it only in roadmap.
+Never cut  Lot Specification Card, compatibility matching, batch QC states and accepted-quantity settlement logic. These are the product's proof, not decoration.
+10.3 Demo script
+Buyer creates an order for one exact bangle specification.
+Three households speak their inventory; one uses a local term.
+The app accepts two compatible batches and explains why the third is excluded.
+The lot dashboard shows quantity remaining and locality cluster.
+Collector scans two batch IDs and records collection quantities.
+QC accepts one batch fully and rejects part of the second for breakage.
+The simulated ledger pays only accepted quantity and shows every deduction.
+Close with field interviews and the plan for a one-cooperative pilot.
+11. Risks and mitigations
+Risk
+Why it matters
+Mitigation
+No real buyer demand
+Aggregation has no economic value
+Interview buyers first; use one real MOQ/specification in the demo.
+Inconsistent quality
+Bulk lot is rejected
+Mandatory spec card, human QC and batch-level attribution.
+Booking cash shortfall
+Cannot promise immediate artisan payment
+Milestone settlement and explicit working-capital partner requirement.
+Escrow claim challenged
+Regulatory credibility loss
+Mock ledger only; name licensed PA/bank as future executor.
+Category 3 ownership
+Output may belong to middleman
+Do not pool it without a lawful cooperative material arrangement.
+Middleman retaliation or debt dependency
+Adoption and safety risk
+Voluntary pilot, local partner, confidential household data and gradual trial orders.
+False Aadhaar/GST integration
+Jury can puncture demo
+Ordinary OTP and labelled manual/mock verification.
+Speech errors
+Wrong product enters lot
+Critical-field confirmation and typed fallback.
+Platform becomes new middleman
+Mission failure
+Fixed disclosed fee, batch-level prices, audit trail and member governance.
+Scope creep
+Incomplete 36-hour demo
+Four-module freeze and explicit cut order.
+
+11.1 Kill criteria
+No buyer confirms that multi-household aggregation solves a real purchase problem.
+The team cannot define one product specification precisely enough to match batches.
+The payment story still relies on a booking amount that is smaller than promised payouts.
+The cooperative/field partner cannot perform physical collection and QC.
+The team cannot protect household identities from unnecessary buyer access.
+
+12. Pilot and roadmap
+Phase 0 — SIH prototype
+Synthetic buyers and households, one product specification, voice confirmation, deterministic matching, batch QR/QC and simulated settlement.
+Phase 1 — Field validation
+Interview 10–20 artisans and at least three buyers. Replace placeholder terminology, quantities, rates and tolerances with field-confirmed data.
+Phase 2 — One-cooperative shadow pilot
+Run the software beside the existing process without moving money. Measure logging time, match accuracy, rejected quantity and coordinator effort.
+Phase 3 — Authorised transaction pilot
+Add a licensed payment partner and written buyer/cooperative terms. Complete legal, accounting, privacy, grievance and material-allocation review before real settlement.
+Phase 4 — Replication
+Adapt the schema and terminology for another craft only after the Firozabad workflow is proven. Do not assume the same ownership and quality structure applies everywhere.
+13. Jury-ready positioning
+13.1 Novelty
+Kanch-Net is not another artisan catalogue. Its product is an operational compiler: it converts many low-literacy household batches into one specification-compliant, traceable lot, while keeping each household's quality and settlement visible.
+13.2 Unfair advantage
+The defensible layer is the local labour taxonomy, product vocabulary, quality rules and production history—not speech recognition or the map.
+13.3 One-line pitch
+Pitch  Kanch-Net lets dozens of Firozabad glass-artisan households act like one reliable wholesale supplier—using voice inventory, specification matching, batch-level quality and transparent settlement.
+
+13.4 Judge questions
+Question
+Answer
+Why not ONDC?
+ONDC can be a future sales channel; Kanch-Net solves the missing production aggregation, quality and settlement preparation before listing.
+Who performs quality checks?
+A trained cooperative checker. Software records rules and evidence; it does not replace physical inspection.
+Where does immediate payment come from?
+The corrected model does not promise full payment from a small booking amount. Settlement follows accepted milestones and cleared partner funds.
+Is this real escrow?
+No. The SIH build is a simulated ledger. A licensed bank/payment partner is required for production money movement.
+How do Category 3 workers join?
+Only through a lawful cooperative material-allocation arrangement tied to an order; not by selling output owned by the middleman.
+Why Heritage & Culture?
+Firozabad Glass is a registered GI and ODOP product; sustainable artisan economics preserves the living skill.
+
+14. Launch checklist
+One real SKU and buyer specification are documented.
+Local terms have been reviewed by at least two artisans or coordinators.
+Matching tests include valid, invalid and uncertain batches.
+Every batch has declared, collected and accepted quantities.
+Settlement uses accepted quantity only.
+All money events are visibly simulated in the SIH build.
+No Aadhaar OTP, bank credentials or unapproved government API is used.
+The three-minute demo works offline with seed data.
+The team has honest field-data labels and does not present interviews as a formal survey.
+
+Appendix A. Field interview guide
+A. Labour and ownership
+Do you buy your material, or does someone supply it?
+Who owns the finished product before it is sold?
+Do you work at home, a workshop or a factory?
+B. Product and quality
+Which product, size, colour, finish and unit do you use?
+How is quality checked, and why is a batch rejected?
+How much can your household make in one day or week?
+C. Money and dependency
+What price do you receive, and how long after handoff are you paid?
+Could you buy the next cycle's material yourself?
+Do you owe money to someone connected to the work?
+D. Technology and trust
+Who in the household uses a smartphone or WhatsApp voice messages?
+Would you record quantity by voice if a trusted coordinator showed you once?
+What proof would make you trust a new buyer or cooperative?
+Appendix B. Official references
+IP India GI Registry — Firozabad Glass: Registered GI, application 155, valid through 8 February 2029.https://search.ipindia.gov.in/GIRPublicSearch/Application/Details/155
+UP ODOP — Firozabad: Official positioning of Firozabad glass products and district craft ecosystem.https://odopup.in/en/districts/firozabad
+DC-MSME cluster diagnostic: Weak marketing linkages and absence of organised marketing channels among cluster challenges.https://dcmsme.gov.in/tcsp/Program%20Overview/Firozabad_V1.pdf
+RBI payment-aggregator escrow requirements: Real payment aggregators and escrow accounts operate under regulated requirements.https://www.rbi.org.in/scripts/NotificationUser.aspx?Id=11996
+UIDAI requesting-entity guidance: Aadhaar authentication is not an unrestricted app API.https://uidai.gov.in/en/ecosystem/authentication-ecosystem/authentication-requesting-agency.html
+UIDAI offline verification: Consent-based offline verification route and OVSE requirements.https://uidai.gov.in/pu/2-uncategorised/19593-ovse-registration.html
+Appendix C. Glossary
+Term
+Meaning
+Lot Specification Card
+The buyer's required product, quality, quantity, packaging and delivery definition.
+Compatible batch
+A household batch that satisfies all mandatory lot fields or an approved tolerance.
+Batch traceability
+The link from household declaration through collection, QC and settlement.
+Booking amount
+Buyer commitment; not automatically enough to pay every artisan in full.
+Settlement simulator
+A demo ledger showing how authorised payment events would be allocated.
+Material allocation
+Cooperative-managed input supply for an order; not an app-issued personal loan.
+Community vouching
+A local trust signal; not official identity verification.
