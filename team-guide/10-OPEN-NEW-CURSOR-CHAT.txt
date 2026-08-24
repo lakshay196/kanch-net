@@ -1,0 +1,44 @@
+PASTE THIS AS THE FIRST MESSAGE IN A NEW CURSOR CHAT
+Cursor: New Agent Chat (or Cmd+N / New Chat).
+Then click + and attach the 4 files listed below. Then paste everything under PASTE.
+
+Project folder (already on this Mac):
+/Users/lakshay/Projects/kanch-net
+
+GitHub:
+https://github.com/lakshay196/kanch-net
+
+--------------------------------------------------
+ATTACH THESE 4 FILES IN THE NEW CHAT
+--------------------------------------------------
+
+1) team-guide/00-START-HERE-LEAD.txt
+2) team-guide/01-EVERYONE-READ-THIS.txt
+3) team-guide/08-KANCH-NET-PRD.txt
+4) WHO-OWNS-WHAT.txt
+
+Optional extra: team-guide/09-CHATGPT-ZERO-SETUP.txt (only if you need teammate setup again)
+
+--------------------------------------------------
+PASTE
+--------------------------------------------------
+
+I am the Kanch-Net team lead. I use Cursor with you. Teammates A/B/C use ChatGPT + Antigravity on the same repo. Do not steal their folders unless I ask.
+
+I already have the empty website: login, starter piles, empty pages /phone /matching /pickup /money.
+
+Start my lead work:
+1) Keep the site running with npm run dev
+2) Open http://localhost:3000 (also allow 127.0.0.1)
+3) Login must work: phone 9000000001 code 1234 → phone page
+4) Improve only lead-owned files: login, layout, data/starter-list.json, README, wiring between pages — not Person A/B/C screens unless I say so
+5) Follow the PRD I attached: one demo story, fake money, no UPI, no Aadhaar
+6) If localhost connection refused, restart npm run dev. Do not tell me the app is broken when the server is just off.
+
+Demo: Family 1 logs a red pile. Family 3 blue pile is rejected with a reason. Pickup + QC. Fake ledger pays accepted qty only.
+
+First: start the server, open the login page, confirm Enter works. Then tell me the next lead task in one sentence and do it.
+
+--------------------------------------------------
+END PASTE
+--------------------------------------------------
