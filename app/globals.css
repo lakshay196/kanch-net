@@ -191,14 +191,15 @@ body {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-height: 44px;
-  padding: 0 0.95rem;
+  min-height: 36px;
+  padding: 0 0.75rem;
   border-radius: 999px;
   border: none;
   background: rgba(255, 250, 243, 0.72);
   color: var(--kn-ink);
+  font-size: 0.9rem;
   font-weight: 700;
-  box-shadow: 0 8px 18px -14px rgba(42, 24, 16, 0.38);
+  box-shadow: 0 6px 14px -12px rgba(42, 24, 16, 0.35);
 }
 
 .kn-chip.is-on {
@@ -214,7 +215,7 @@ body {
 .kn-chip-ghost {
   background: rgba(246, 239, 228, 0.16);
   color: var(--kn-cream);
-  min-height: 44px;
+  min-height: 36px;
   box-shadow: none;
 }
 
@@ -222,28 +223,29 @@ body {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-height: 56px;
-  padding: 0 0.95rem;
+  min-height: 40px;
+  padding: 0 0.75rem;
   border-radius: 999px;
   color: var(--kn-cream);
+  font-size: 0.9rem;
   font-weight: 700;
 }
 
 .kn-orb {
-  width: 4.25rem;
-  height: 4.25rem;
+  width: 3.35rem;
+  height: 3.35rem;
   border-radius: 50%;
   border: 1px solid rgba(255, 250, 243, 0.28);
   color: rgba(255, 250, 243, 0.96);
-  font-size: 0.88rem;
+  font-size: 0.78rem;
   font-weight: 700;
   letter-spacing: 0.02em;
   display: grid;
   place-items: center;
   box-shadow:
     inset 0 1px 0 rgba(255, 255, 255, 0.32),
-    inset 0 -8px 14px rgba(0, 0, 0, 0.2),
-    0 8px 18px -12px rgba(42, 24, 16, 0.4);
+    inset 0 -6px 12px rgba(0, 0, 0, 0.2),
+    0 6px 14px -10px rgba(42, 24, 16, 0.4);
   transition:
     transform 120ms ease-out,
     box-shadow 120ms ease-out,
@@ -273,13 +275,13 @@ body {
 }
 
 .kn-dot {
-  width: 1.85rem;
-  height: 1.85rem;
+  width: 1.35rem;
+  height: 1.35rem;
   flex-shrink: 0;
   border-radius: 50%;
   box-shadow:
-    inset 0 3px 6px rgba(255, 255, 255, 0.35),
-    inset 0 -4px 6px rgba(0, 0, 0, 0.16);
+    inset 0 2px 4px rgba(255, 255, 255, 0.35),
+    inset 0 -3px 4px rgba(0, 0, 0, 0.16);
 }
 
 .kn-dot-red {
@@ -292,16 +294,16 @@ body {
 
 .kn-field {
   width: 100%;
-  min-height: 48px;
+  min-height: 42px;
   border: none;
   border-radius: 999px;
   background: var(--kn-paper);
   color: var(--kn-ink);
-  padding: 0.7rem 1.15rem;
-  font-size: 1.1rem;
+  padding: 0.55rem 1rem;
+  font-size: 1rem;
   box-shadow:
     inset 0 1px 0 rgba(255, 255, 255, 0.85),
-    0 10px 22px -16px rgba(42, 24, 16, 0.38);
+    0 8px 18px -14px rgba(42, 24, 16, 0.38);
 }
 
 .kn-field:focus {
@@ -313,19 +315,19 @@ body {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 0.55rem;
-  min-width: 10.5rem;
-  min-height: 48px;
-  padding: 0 1.45rem;
+  gap: 0.45rem;
+  min-width: 8.5rem;
+  min-height: 40px;
+  padding: 0 1.1rem;
   border: none;
   border-radius: 999px;
   background: linear-gradient(165deg, #9a2419 0%, #8b1e14 55%, #71180f 100%);
   color: white;
-  font-size: 1.1rem;
+  font-size: 0.95rem;
   font-weight: 700;
   box-shadow:
     inset 0 1px 0 rgba(255, 255, 255, 0.22),
-    0 14px 28px -16px rgba(139, 30, 20, 0.5);
+    0 10px 22px -14px rgba(139, 30, 20, 0.5);
 }
 
 .kn-mic-dot {
@@ -405,6 +407,60 @@ body {
   pointer-events: auto;
   width: 100%;
   max-width: 32rem;
+}
+
+.kn-btn-primary {
+  min-height: 42px;
+  padding: 0.55rem 1rem;
+  font-size: 0.95rem;
+  font-weight: 800;
+}
+
+.kn-fold {
+  margin-top: 1.25rem;
+  border-radius: 1.15rem;
+  background: rgba(255, 250, 243, 0.55);
+  box-shadow: 0 10px 24px -18px rgba(42, 24, 16, 0.35);
+  overflow: hidden;
+}
+
+.kn-fold > summary {
+  list-style: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 0.85rem 1rem;
+  font-size: 1rem;
+  font-weight: 800;
+  color: var(--kn-ink);
+}
+
+.kn-fold > summary::-webkit-details-marker {
+  display: none;
+}
+
+.kn-fold > summary::after {
+  content: "▾";
+  font-size: 0.85rem;
+  color: var(--kn-maroon);
+  transition: transform 120ms ease;
+}
+
+.kn-fold[open] > summary::after {
+  transform: rotate(-180deg);
+}
+
+.kn-fold-body {
+  padding: 0 1rem 1rem;
+}
+
+.kn-fold .kn-card {
+  margin-top: 0;
+  box-shadow: none;
+  background: transparent;
+  padding: 0;
 }
 
 .kn-help summary {

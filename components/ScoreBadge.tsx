@@ -10,7 +10,7 @@ export default function ScoreBadge({
 }) {
   const score = reliabilityScore(householdId);
   return (
-    <p className="text-sm font-bold text-[#8b1e14]">
+    <p className="text-xs font-bold text-[#8b1e14]">
       {lang === "hi" ? "विश्वसनीयता" : "Reliability"} {score}
     </p>
   );
