@@ -152,14 +152,6 @@ function ArtisanHome({ user }: { user: SessionUser }) {
       <h1 className="text-3xl font-extrabold leading-tight">{t.title}</h1>
       <p className="mt-1.5 text-base text-[#5c4638]">{user.name}</p>
       {user.householdId ? <ScoreBadge householdId={user.householdId} lang={lang} /> : null}
-      <div className="mt-3 flex gap-2">
-        <Link href="/chat" className="kn-chip flex-1 text-[#8b1e14]">
-          {t.chat}
-        </Link>
-        <Link href="/map" className="kn-chip flex-1 text-[#8b1e14]">
-          {t.map}
-        </Link>
-      </div>
       <LangBar lang={lang} onChange={changeLang} />
 
       <label className="mt-6 block text-base font-bold">{t.craft}</label>

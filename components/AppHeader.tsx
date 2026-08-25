@@ -36,17 +36,9 @@ export default function AppHeader() {
           <div className="flex flex-wrap items-center justify-end gap-2">
             <span className="kn-chip kn-chip-ghost text-sm">{user.name}</span>
             {user.role === "artisan" ? (
-              <>
-                <Link href="/artisan" className="kn-nav">
-                  Home
-                </Link>
-                <Link href="/chat" className="kn-nav">
-                  Chat
-                </Link>
-                <Link href="/map" className="kn-nav">
-                  Map
-                </Link>
-              </>
+              <Link href="/artisan" className="kn-nav">
+                Home
+              </Link>
             ) : null}
             {user.role === "buyer" ? (
               <>
