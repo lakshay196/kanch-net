@@ -1,282 +1,258 @@
 "use client";
 
+import { useEffect, useMemo, useState } from "react";
 import starter from "@/data/starter-list.json";
 import AppHeader from "@/components/AppHeader";
 import NeedLogin from "@/components/NeedLogin";
-import OwnerNote from "@/components/OwnerNote";
+import { colourWords, familyName } from "@/lib/labels";
+import { defaultLang, readLang, saveLang, type UiLang } from "@/lib/lang";
+import { matchPileToOrder, type OrderMatchFields } from "@/lib/match";
+import { kmFromHub } from "@/lib/places";
+import { loadPiles } from "@/lib/store";
+import type { Pile } from "@/lib/types";
 
-type Pile = (typeof starter.piles)[number];
+const order = starter.order;
 
-type MatchResult = {
-  isMatch: boolean;
-  reason: string | null;
+const ORDER_FIELDS: OrderMatchFields = {
+  productFamily: order.productFamily,
+  size: order.size,
+  colourFamily: order.colourFamily,
+  colourName: order.colourName,
+  finish: order.finish,
+  finishName: order.finishName,
+  minGrade: order.minGrade,
 };
 
-/**
- * Deterministic rule-based matching logic.
- * A pile is IN only when:
- * - product = glass_bangle
- * - colour = ruby_red
- * - size is within 2–6 (i.e. "2-6")
- * - finish = plain_glossy
- * - grade is A or B (Grade B or better)
- */
-function evaluatePileMatch(pile: Pile): MatchResult {
-  if (pile.productFamily !== "glass_bangle") {
-    return {
-      isMatch: false,
-      reason: `Product ${pile.productFamily} does not match glass_bangle`,
-    };
+function lookWords(finish: string, lang: UiLang) {
+  if (finish === "plain_glossy") return lang === "hi" ? "चमकदार" : "shiny";
+  if (finish === "matte") return lang === "hi" ? "मैट" : "matte";
+  return finish.replace(/_/g, " ");
+}
+
+function whyOut(pile: Pile, want: OrderMatchFields, lang: UiLang): string {
+  const hi = lang === "hi";
+  if (pile.productFamily !== want.productFamily) {
+    return hi ? "यह चूड़ी नहीं है" : "Not glass bangles";
   }
-  if (pile.colourFamily !== "ruby_red") {
-    const colourDisplay = pile.colourFamily === "blue" ? "blue" : pile.colourFamily;
-    return {
-      isMatch: false,
-      reason: `Colour ${colourDisplay} does not match ruby red`,
-    };
+  if (pile.size !== want.size) {
+    return hi
+      ? `साइज़ ${pile.size} है, खरीदार ${want.size} चाहता है`
+      : `Size ${pile.size}, buyer wants ${want.size}`;
   }
-  if (pile.size !== "2-6") {
-    return {
-      isMatch: false,
-      reason: `Size ${pile.size} is outside the required range 2–6`,
-    };
+  if (pile.colourFamily !== want.colourFamily) {
+    return hi
+      ? `${colourWords(pile.colourFamily, "hi")} है, खरीदार ${colourWords(want.colourFamily, "hi")} चाहता है`
+      : `${colourWords(pile.colourFamily, "en")}, buyer wants ${colourWords(want.colourFamily, "en").toLowerCase()}`;
   }
-  if (pile.finish !== "plain_glossy") {
-    const finishDisplay = pile.finish === "matte" ? "matte" : pile.finish;
-    return {
-      isMatch: false,
-      reason: `Finish ${finishDisplay} does not match plain glossy`,
-    };
+  if (pile.finish !== want.finish) {
+    return hi
+      ? `${lookWords(pile.finish, "hi")} है, खरीदार ${lookWords(want.finish, "hi")} चाहता है`
+      : `${lookWords(pile.finish, "en")}, buyer wants ${lookWords(want.finish, "en")}`;
   }
-  if (pile.grade !== "A" && pile.grade !== "B") {
-    return {
-      isMatch: false,
-      reason: `Grade ${pile.grade} is below the required Grade B`,
-    };
-  }
-  return { isMatch: true, reason: null };
+  return hi
+    ? `ग्रेड ${pile.grade} है, खरीदार ${want.minGrade}+ चाहता है`
+    : `Grade ${pile.grade}, buyer wants ${want.minGrade}+`;
+}
+
+function outSortRank(pile: Pile, want: OrderMatchFields) {
+  if (pile.colourFamily !== want.colourFamily) return 0;
+  if (pile.size !== want.size) return 1;
+  if (pile.finish !== want.finish) return 2;
+  if (pile.productFamily !== want.productFamily) return 3;
+  return 4;
+}
+
+function ColourDot({ family }: { family: string }) {
+  return (
+    <span
+      className={`kn-dot ${family === "blue" ? "kn-dot-blue" : "kn-dot-red"}`}
+      aria-hidden
+    />
+  );
+}
+
+function LangBar({ lang, onChange }: { lang: UiLang; onChange: (lang: UiLang) => void }) {
+  return (
+    <div className="mt-4 flex gap-2">
+      <button
+        type="button"
+        onClick={() => onChange("hi")}
+        className={`kn-chip flex-1 text-base ${lang === "hi" ? "is-on" : ""}`}
+      >
+        हिन्दी
+      </button>
+      <button
+        type="button"
+        onClick={() => onChange("en")}
+        className={`kn-chip flex-1 text-base ${lang === "en" ? "is-on" : ""}`}
+      >
+        English
+      </button>
+    </div>
+  );
 }
 
 export default function MatchingPage() {
-  const order = starter.order;
-  const targetQuantity = order.quantityNeeded;
+  const [lang, setLang] = useState<UiLang>(defaultLang("coordinator"));
+  const [piles, setPiles] = useState<Pile[] | null>(null);
+  const hi = lang === "hi";
 
-  // Process all piles deterministically
-  const evaluatedPiles = starter.piles.map((pile) => ({
-    pile,
-    ...evaluatePileMatch(pile),
-  }));
+  useEffect(() => {
+    setLang(readLang("coordinator"));
+    function refresh() {
+      setPiles(loadPiles());
+    }
+    refresh();
+    window.addEventListener("focus", refresh);
+    window.addEventListener("storage", refresh);
+    return () => {
+      window.removeEventListener("focus", refresh);
+      window.removeEventListener("storage", refresh);
+    };
+  }, []);
 
-  const inPiles = evaluatedPiles.filter((item) => item.isMatch);
-  const outPiles = evaluatedPiles.filter((item) => !item.isMatch);
+  const { keep, cannot, remaining } = useMemo(() => {
+    const list = piles ?? [];
+    const keep: Pile[] = [];
+    const cannot: Array<{ pile: Pile; reason: string }> = [];
+    for (const pile of list) {
+      const result = matchPileToOrder(pile, ORDER_FIELDS);
+      if (result.ok) keep.push(pile);
+      else cannot.push({ pile, reason: whyOut(pile, ORDER_FIELDS, lang) });
+    }
+    keep.sort((a, b) => kmFromHub(a.locality) - kmFromHub(b.locality));
+    cannot.sort(
+      (a, b) => outSortRank(a.pile, ORDER_FIELDS) - outSortRank(b.pile, ORDER_FIELDS),
+    );
+    const keptQty = keep.reduce((sum, pile) => sum + pile.declaredQty, 0);
+    return {
+      keep,
+      cannot,
+      remaining: Math.max(0, order.quantityNeeded - keptQty),
+    };
+  }, [piles, lang]);
 
-  // Calculate total quantity of IN piles without double counting
-  const totalInQuantity = inPiles.reduce(
-    (sum, item) => sum + item.pile.declaredQty,
-    0,
-  );
-
-  const remainingQuantity = Math.max(0, targetQuantity - totalInQuantity);
+  function changeLang(next: UiLang) {
+    saveLang("coordinator", next);
+    setLang(next);
+  }
 
   return (
     <>
       <AppHeader />
       <NeedLogin>
-        {() => (
-          <main className="mx-auto max-w-4xl px-4 py-6">
-            <div className="flex flex-wrap items-center justify-between gap-2">
-              <div>
-                <h1 className="text-3xl font-bold">Matching Screen</h1>
-                <p className="mt-1 text-[#5c4638]">
-                  Rule-based pile matching for Buyer Order ORD-001
+        {() =>
+          piles === null ? (
+            <p className="p-6 text-[#5c4638]">…</p>
+          ) : (
+            <main className="kn-shell mx-auto max-w-md px-5 pb-16 pt-8">
+              <h1 className="text-3xl font-extrabold leading-tight">
+                {hi ? "मैचिंग" : "Matching"}
+              </h1>
+              <LangBar lang={lang} onChange={changeLang} />
+
+              <section className="mt-8">
+                <p className="text-sm font-bold text-[#5c4638]">
+                  {hi ? "खरीदार चाहता है" : "Buyer wants"}
                 </p>
-              </div>
-            </div>
-
-            <div className="mt-4">
-              <OwnerNote who="Person B" folder="app/matching" />
-            </div>
-
-            {/* 1. ORDER CARD */}
-            <section className="mt-6 rounded-3xl bg-white p-6 shadow-sm border border-[#e5dcd3]">
-              <div className="flex flex-wrap items-center justify-between gap-2 border-b border-[#f0e8e0] pb-4">
-                <div>
-                  <span className="inline-block rounded-full bg-[#8b1e14]/10 px-3 py-1 text-xs font-bold text-[#8b1e14]">
-                    ORDER {order.orderId}
-                  </span>
-                  <h2 className="mt-2 text-2xl font-bold text-[#2d1e18]">
-                    10,000 red glass bangles
-                  </h2>
-                </div>
-                <div className="text-right">
-                  <span className="text-xs text-[#7c6658]">Target Quantity</span>
-                  <p className="text-xl font-bold text-[#8b1e14]">
-                    {targetQuantity.toLocaleString()} pcs
+                <div className="mt-3 flex items-center gap-3">
+                  <span
+                    className={`kn-dot ${order.colourFamily === "blue" ? "kn-dot-blue" : "kn-dot-red"}`}
+                    aria-hidden
+                  />
+                  <p className="text-xl font-extrabold leading-snug">
+                    {order.quantityNeeded.toLocaleString("en-IN")}{" "}
+                    {colourWords(order.colourFamily, lang).toLowerCase()} · {order.size}
                   </p>
                 </div>
-              </div>
+              </section>
 
-              <div className="mt-4 grid gap-3 text-sm sm:grid-cols-2 lg:grid-cols-4">
-                <div className="rounded-2xl bg-[#faf6f0] p-3">
-                  <span className="text-xs text-[#7c6658]">Size</span>
-                  <p className="font-semibold text-[#2d1e18]">Size 2–6</p>
-                </div>
-                <div className="rounded-2xl bg-[#faf6f0] p-3">
-                  <span className="text-xs text-[#7c6658]">Colour</span>
-                  <p className="font-semibold text-[#2d1e18]">Ruby Red</p>
-                </div>
-                <div className="rounded-2xl bg-[#faf6f0] p-3">
-                  <span className="text-xs text-[#7c6658]">Finish</span>
-                  <p className="font-semibold text-[#2d1e18]">Plain glossy</p>
-                </div>
-                <div className="rounded-2xl bg-[#faf6f0] p-3">
-                  <span className="text-xs text-[#7c6658]">Quality Grade</span>
-                  <p className="font-semibold text-[#2d1e18]">Grade B or better</p>
-                </div>
-              </div>
-            </section>
+              <section className="mt-8">
+                <p className="text-sm font-bold text-[#5c4638]">
+                  {hi ? "अभी चाहिए" : "Still need"}
+                </p>
+                <p className="mt-1 text-4xl font-extrabold tracking-tight text-[#8b1e14]">
+                  {remaining.toLocaleString("en-IN")}
+                </p>
+                <p className="mt-1 text-sm text-[#5c4638]">
+                  {remaining === 0
+                    ? hi
+                      ? "पूरा हो गया"
+                      : "Lot is full"
+                    : hi
+                      ? "टुकड़े और चाहिए"
+                      : "pieces short"}
+                </p>
+              </section>
 
-            {/* 4. REMAINING QUANTITY */}
-            <section className="mt-6 rounded-3xl bg-[#8b1e14] p-6 text-white shadow-md">
-              <div className="flex flex-wrap items-center justify-between gap-4">
-                <div>
-                  <h3 className="text-lg font-semibold text-red-100">
-                    Order Fulfillment Summary
-                  </h3>
-                  <p className="mt-1 text-3xl font-extrabold">
-                    {remainingQuantity.toLocaleString()} pcs remaining
-                  </p>
-                  <p className="mt-1 text-sm text-red-100">
-                    Calculation: 10,000 (Needed) - {totalInQuantity.toLocaleString()} (IN Piles Total)
-                  </p>
-                </div>
-                <div className="flex gap-4 rounded-2xl bg-white/10 p-4 text-center backdrop-blur-sm">
-                  <div>
-                    <span className="text-xs text-red-200">IN Piles</span>
-                    <p className="text-xl font-bold">{inPiles.length}</p>
-                  </div>
-                  <div className="border-r border-white/20" />
-                  <div>
-                    <span className="text-xs text-red-200">Total Matched</span>
-                    <p className="text-xl font-bold">{totalInQuantity.toLocaleString()} pcs</p>
-                  </div>
-                </div>
-              </div>
-            </section>
+              <section className="mt-10">
+                <h2 className="text-xl font-extrabold">
+                  {hi ? "रखें" : "Keep"}
+                </h2>
+                <p className="mt-1 text-sm text-[#5c4638]">
+                  {hi ? "मिलती हुई लाल" : "Matching red"}
+                </p>
+                <ul className="mt-4 space-y-3">
+                  {keep.length === 0 ? (
+                    <li className="text-base text-[#5c4638]">
+                      {hi ? "अभी कोई नहीं" : "None yet"}
+                    </li>
+                  ) : (
+                    keep.map((pile) => (
+                      <li key={pile.batchId} className="kn-row">
+                        <ColourDot family={pile.colourFamily} />
+                        <div className="min-w-0 flex-1">
+                          <p className="font-bold">
+                            {colourWords(pile.colourFamily, lang)} ·{" "}
+                            {pile.declaredQty.toLocaleString("en-IN")}
+                          </p>
+                          <p className="text-sm text-[#5c4638]">
+                            {familyName(pile.householdId, lang)} · {pile.locality}
+                          </p>
+                        </div>
+                      </li>
+                    ))
+                  )}
+                </ul>
+              </section>
 
-            {/* 2. IN LIST */}
-            <section className="mt-8">
-              <div className="flex items-center justify-between">
-                <h3 className="text-xl font-bold text-[#2d1e18]">
-                  IN List ({inPiles.length} Piles Satisfying All Rules)
-                </h3>
-                <span className="rounded-full bg-emerald-100 px-3 py-1 text-xs font-bold text-emerald-800">
-                  {totalInQuantity.toLocaleString()} pieces matched
-                </span>
-              </div>
-              <p className="mt-1 text-sm text-[#5c4638]">
-                These piles match product (glass_bangle), colour (ruby_red), size (2–6), finish (plain_glossy), and grade (A/B).
-              </p>
-
-              <div className="mt-4 grid gap-4 sm:grid-cols-2">
-                {inPiles.map(({ pile }) => (
-                  <div
-                    key={pile.batchId}
-                    className="flex flex-col justify-between rounded-2xl border border-emerald-200 bg-white p-4 shadow-sm transition hover:shadow-md"
-                  >
-                    <div>
-                      <div className="flex items-center justify-between">
-                        <span className="font-mono text-base font-bold text-[#2d1e18]">
-                          {pile.batchId}
-                        </span>
-                        <span className="rounded-full bg-emerald-100 px-2.5 py-0.5 text-xs font-bold text-emerald-800">
-                          IN MATCH
-                        </span>
-                      </div>
-                      <div className="mt-2 text-2xl font-extrabold text-[#8b1e14]">
-                        {pile.declaredQty.toLocaleString()}{" "}
-                        <span className="text-sm font-normal text-[#5c4638]">
-                          pieces
-                        </span>
-                      </div>
-                      <div className="mt-3 flex flex-wrap gap-2 text-xs">
-                        <span className="rounded-md bg-[#faf6f0] px-2 py-1 text-[#5c4638]">
-                          Size: {pile.size}
-                        </span>
-                        <span className="rounded-md bg-[#faf6f0] px-2 py-1 text-[#5c4638]">
-                          Colour: {pile.colourFamily}
-                        </span>
-                        <span className="rounded-md bg-[#faf6f0] px-2 py-1 text-[#5c4638]">
-                          Finish: {pile.finish}
-                        </span>
-                        <span className="rounded-md bg-emerald-50 px-2 py-1 font-semibold text-emerald-800">
-                          Grade {pile.grade}
-                        </span>
-                      </div>
-                    </div>
-                    {/* Privacy preserved: Only displaying Household ID and Locality, no phone numbers */}
-                    <div className="mt-4 flex items-center justify-between border-t border-[#f5efe8] pt-3 text-xs text-[#7c6658]">
-                      <span>{pile.householdId} ({pile.locality})</span>
-                      <span className="capitalize">Status: {pile.status}</span>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </section>
-
-            {/* 3. OUT LIST */}
-            <section className="mt-10">
-              <div className="flex items-center justify-between">
-                <h3 className="text-xl font-bold text-[#2d1e18]">
-                  OUT List ({outPiles.length} Non-Matching Piles)
-                </h3>
-                <span className="rounded-full bg-amber-100 px-3 py-1 text-xs font-bold text-amber-900">
-                  {outPiles.length} excluded
-                </span>
-              </div>
-              <p className="mt-1 text-sm text-[#5c4638]">
-                Piles that fail one or more mandatory buyer requirements, with human-readable reasons.
-              </p>
-
-              <div className="mt-4 space-y-3">
-                {outPiles.map(({ pile, reason }) => (
-                  <div
-                    key={pile.batchId}
-                    className="flex flex-col gap-3 rounded-2xl border border-rose-200 bg-white p-4 shadow-sm sm:flex-row sm:items-center sm:justify-between"
-                  >
-                    <div className="space-y-1">
-                      <div className="flex items-center gap-3">
-                        <span className="font-mono text-base font-bold text-[#2d1e18]">
-                          {pile.batchId}
-                        </span>
-                        <span className="rounded-full bg-rose-100 px-2.5 py-0.5 text-xs font-bold text-rose-800">
-                          OUT
-                        </span>
-                        <span className="text-xs text-[#7c6658]">
-                          {pile.declaredQty} pcs · {pile.householdId} ({pile.locality})
-                        </span>
-                      </div>
-                      <div className="flex flex-wrap items-center gap-2 text-xs text-[#5c4638]">
-                        <span>Size: {pile.size}</span>
-                        <span>•</span>
-                        <span>Colour: {pile.colourFamily}</span>
-                        <span>•</span>
-                        <span>Finish: {pile.finish}</span>
-                        <span>•</span>
-                        <span>Grade: {pile.grade}</span>
-                      </div>
-                    </div>
-                    <div className="rounded-xl bg-rose-50 px-3.5 py-2 border border-rose-100 text-xs font-semibold text-rose-800">
-                      Reason: &quot;{reason}&quot;
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </section>
-          </main>
-        )}
+              <section className="mt-10">
+                <h2 className="text-xl font-extrabold">
+                  {hi ? "नहीं ले सकते" : "Cannot take"}
+                </h2>
+                <p className="mt-1 text-sm text-[#5c4638]">
+                  {hi ? "नीली वगैरह" : "Blue and the rest"}
+                </p>
+                <ul className="mt-4 space-y-3">
+                  {cannot.length === 0 ? (
+                    <li className="text-base text-[#5c4638]">
+                      {hi ? "सब चल सकता है" : "Everything can join"}
+                    </li>
+                  ) : (
+                    cannot.map(({ pile, reason }) => (
+                      <li key={pile.batchId} className="kn-row">
+                        <ColourDot family={pile.colourFamily} />
+                        <div className="min-w-0 flex-1">
+                          <p className="font-bold">
+                            {colourWords(pile.colourFamily, lang)} ·{" "}
+                            {pile.declaredQty.toLocaleString("en-IN")}
+                          </p>
+                          <p className="mt-0.5 text-sm leading-snug text-[#8b1e14]">
+                            {reason}
+                          </p>
+                          <p className="text-sm text-[#5c4638]">
+                            {familyName(pile.householdId, lang)} · {pile.locality}
+                          </p>
+                        </div>
+                      </li>
+                    ))
+                  )}
+                </ul>
+              </section>
+            </main>
+          )
+        }
       </NeedLogin>
     </>
   );
 }
-

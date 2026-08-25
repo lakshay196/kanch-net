@@ -1,0 +1,553 @@
+═══════════════════════════════════════════════════════════════════
+KANCH-NET — PRODUCT REQUIREMENTS DOCUMENT (AS BUILT)
+═══════════════════════════════════════════════════════════════════
+
+Product name:     Kanch-Net
+Stage:            SIH student software prototype — live demo
+Document status:  Live product truth + locked MVP additions
+Prepared:         25 August 2026
+Live demo:        https://kanch-net.vercel.app
+Local demo:       http://localhost:3000
+Login code:       Always 1234 (phones under Demo help on the login page)
+
+How to read this document
+  • Sections 0–10 + demo script = what the running app already does.
+  • Section 11 (MVP additions) = locked next build: GST, Aadhaar, locations.
+  • Do not pitch Section 11 as already shipped. Do pitch it as the next MVP cut.
+
+Older aspirational text in earlier drafts (real bank escrow, custom dialect
+ASR training, GI registration automation, national marketplace claims) stays
+retired unless listed under Section 11.
+
+═══════════════════════════════════════════════════════════════════
+0. ONE SENTENCE
+═══════════════════════════════════════════════════════════════════
+
+Kanch-Net is a two-home app where Firozabad glass families post small stock,
+buyers post one clear demand, matching piles meet by specification first and
+nearness second, a demo piece is accepted in chat before money moves into a
+trust pool, and families are paid only for pieces that pass quality check.
+
+═══════════════════════════════════════════════════════════════════
+1. WHY THIS EXISTS
+═══════════════════════════════════════════════════════════════════
+
+A wholesale buyer wants one large, consistent lot — for the demo story,
+10,000 red glass bangles, size 2–6, plain glossy, Grade B (order ORD-001).
+
+No single home can supply that alone. Twenty homes can — but only if:
+
+  • incompatible piles are kept out (wrong colour, size, grade),
+  • nearer matching homes are preferred after the spec fits,
+  • the buyer sees a real demo piece before locking a large quantity,
+  • money does not evaporate into udhaar after the glass leaves the house,
+  • rejected stock is not thrown away — it stays available for another buyer.
+
+Kanch-Net is the cooperative’s thin operating screen for that story.
+It does not replace the collector’s hands, the mandi’s eyes, or a bank.
+It makes the rules visible so both sides can trust the same notebook.
+
+Heritage note (honest): Firozabad glass is living craft and livelihood.
+A craft survives when the people who carry the skill can earn reliably.
+This product is economic infrastructure for that craft — not a decorative
+“heritage skin” on a generic catalogue.
+
+═══════════════════════════════════════════════════════════════════
+2. PRODUCT FACTS (NON-NEGOTIABLE)
+═══════════════════════════════════════════════════════════════════
+
+FACT 1 — Two interfaces after one login
+  Everyone starts on the same login page.
+  Phone + code (1234) decides who you are.
+  Artisan login opens the artisan home.
+  Buyer login opens the buyer home.
+  Collector and coordinator have staff screens (pickup / matching / money).
+  The main pitch is artisan home ↔ buyer home.
+
+FACT 2 — Glass bangles are live; pottery and textile are locked
+  On the artisan home, craft is a dropdown:
+    • Bangle makers — live
+    • Pottery — labelled (making in process)
+    • Textile — labelled (making in process)
+  Selecting pottery or textile does not unlock posting for this demo.
+
+FACT 3 — Cross feeds (the basic marketplace loop)
+  Artisan posts stock: quantity, quality (grade), colour (and size for glass).
+  That stock appears on the buyer feed.
+  Buyer posts demand: quantity, quality, colour, size.
+  That demand appears on the artisan feed.
+  Same browser, shared local store — so logout → login as the other role
+  still sees the posts in this prototype.
+
+FACT 4 — Spec first, then nearest
+  A pile may join a demand only if product, size, colour, finish, and
+  minimum grade rules pass (deterministic rules — not AI).
+  Among piles that pass, the buyer feed sorts nearer localities first
+  (demo kilometres from Firozabad mandi — not live GPS tracking).
+  Wrong colour (e.g. blue when the buyer wants red) stays OUT with a
+  plain-language reason.
+
+FACT 5 — Demo piece in chat before large-order money
+  Before Confirm on a large quantity, the artisan sends a demo piece in
+  the in-app chat (colour, small qty, optional photo).
+  Buyer Accept → demand quantity locks (cannot shrink).
+  Buyer Reject → pile stays in the pool for another buyer; stock is not wasted.
+  Confirm stays closed until a demo is accepted.
+
+FACT 6 — Money pool against udhaar (simulated ledger, not a bank)
+  After demo Accept:
+    1) Buyer pays booking (~25% of lot value) — filters time-passers.
+    2) Buyer Confirm puts the remaining amount into the in-app money pool.
+    3) Collector records QC (collected / good / broken).
+    4) Released rupees follow accepted pieces only (minus co-op fee %).
+    5) Rejected quantity’s buyer-side value returns conceptually to the buyer.
+  No real UPI. No GPay-looking Pay button. No Aadhaar. Judges are told:
+  this is demo money that shows the trust logic.
+
+FACT 7 — Map for nearness
+  /map shows the mandi and household localities as pins (Leaflet + OSM,
+  assets vendored in the app). List under the map ranks nearer places first.
+  Map does not override specification. Spec match still wins; distance ranks
+  among matches and helps the “people near you” story.
+
+FACT 8 — Producer reliability score
+  Shown on the artisan bio and on buyer stock rows.
+  Seed scores exist when there is no QC yet (Family 1 high; Family 3 lower).
+  After QC: score ≈ accepted ÷ (accepted + rejected) × 100.
+  Purpose: buyer trust + artisan motivation for quality.
+
+FACT 9 — Prototype boundary (live build)
+  Next.js front-end, starter JSON + browser localStorage.
+  No FastAPI backend, no shared cloud database between phones,
+  no live payments partner, no QR claim in this build.
+  GST / Aadhaar / mandatory unit–firm location capture are not live yet;
+  they are locked for the next MVP cut (see Section 11).
+  Chrome Web Speech may assist artisan entry when the browser allows it;
+  it is assistive, not a trained dialect ASR product.
+
+═══════════════════════════════════════════════════════════════════
+3. USERS AND ENTRY
+═══════════════════════════════════════════════════════════════════
+
+3.1 Login (first surface)
+
+  Brand: Kanch-Net
+  Line:  Stock. Need. Match.
+  Inputs: phone, code 1234
+  Demo help reveals role phones (do not hide the demo from judges).
+
+  Role phones (current seed):
+    9000000001  Family 1          → /artisan
+    9000000002  Family 2          → /artisan
+    9000000003  Family 3 (blue)   → /artisan
+    9000000030  Buyer             → /buyer
+    9000000010  Collector         → /pickup
+    9000000020  Coordinator       → /matching
+
+3.2 Language
+
+  Artisan home defaults to Hindi; buyer home defaults to English.
+  Both can switch हिन्दी | English.
+  Low-literacy design: large taps, plain words, hide internal codes
+  from the main story (batch IDs exist in data; the home screens speak
+  in colour, pieces, family, distance).
+
+═══════════════════════════════════════════════════════════════════
+4. ARTISAN INTERFACE (WHAT THE FAMILY SEES)
+═══════════════════════════════════════════════════════════════════
+
+Primary route: /artisan
+
+4.1 Identity strip
+  Family name, reliability score badge, language toggle.
+  Links for Chat and Map remain available to the artisan role
+  (buyer top Chat/Map shortcuts were removed from the buyer chrome;
+  chat still opens from stock/demand paths where the demo needs it).
+
+4.2 Craft dropdown (mandatory product shape)
+  Bangle makers — active path for the SIH demo.
+  Pottery (making in process) — visible, locked.
+  Textile (making in process) — visible, locked.
+
+  Why show locked crafts: the product is a craft platform shape, not a
+  one-SKU toy. Honesty about “not ready yet” beats a fake pottery flow.
+
+4.3 Raise stock
+  Fields in the live glass path:
+    colour (red / blue),
+    quantity (pieces),
+    quality / grade (A · fine / B · regular),
+    size for glass (e.g. 2–6).
+  Optional Speak (Chrome speech) fills qty / colour hints when available.
+  Post stock writes into the shared pile store and appears on the buyer feed.
+
+4.4 Buyer demands on artisan feed
+  Demands posted by the buyer (including seed ORD-001) list on the artisan
+  home so the family sees what the market is asking for.
+  From a demand, the artisan can open chat to send a demo piece.
+
+4.5 Own stock cards
+  The family sees what they already posted — colour, pieces, locality cue.
+
+═══════════════════════════════════════════════════════════════════
+5. BUYER INTERFACE (WHAT THE WHOLESALE SIDE SEES)
+═══════════════════════════════════════════════════════════════════
+
+Primary route: /buyer
+
+5.1 Raise a demand
+  Colour, quantity, size, quality/grade.
+  Post demand writes into the shared demand store and appears on artisan feeds.
+  Extra demands can be cancelled; seed ORD-001 stays as the demo order.
+  After a demo is accepted, quantity for that demand is locked (cannot shrink).
+
+5.2 Money pool card (on buyer home)
+  Booking · In pool · Released · Returned.
+  Pay booking only after demo Accept.
+  Confirm only after booking.
+  Plain English copy by default; Hindi available via toggle.
+
+5.3 Artisan proposals feed (“plenty of proposals”)
+  Two lists:
+
+  IN — “Artisan stock that can join”
+       Spec-compatible piles, nearer km first.
+       Reliability badge on each row.
+       Chat link on a row opens the demo-piece conversation for that pile.
+
+  OUT — “Won’t work for this demand”
+        First failing rule as a human reason
+        (example: colour is blue, buyer wants red).
+
+5.4 Buyer chrome
+  Header: Home, Money (Chat/Map top buttons removed on buyer).
+  Money page /money shows the same pool story plus family release lines
+  after QC.
+
+═══════════════════════════════════════════════════════════════════
+6. MATCHING RULES (THE “ENGINE” — HONEST NAME)
+═══════════════════════════════════════════════════════════════════
+
+This is not machine learning.
+It is a short, auditable checklist in code (lib/match.ts):
+
+  1. Same product family (glass bangle for the live path)
+  2. Same size band
+  3. Same colour family
+  4. Compatible finish
+  5. Pile grade meets or beats the buyer’s minimum grade
+
+First failure wins the OUT reason.
+IN piles are then ordered by demo distance from Firozabad mandi.
+
+Staff matching page (/matching) shows the same IN / OUT idea in plain
+Hindi + English for the coordinator demo.
+
+═══════════════════════════════════════════════════════════════════
+7. FEATURE DEPTH — THE FOUR TRUST LAYERS
+═══════════════════════════════════════════════════════════════════
+
+These four layers sit on top of the basic two-home feeds.
+They do not replace the feeds; they make the feeds safe enough to pitch.
+
+───────────────────────────────────────────────────────────────────
+7.1 Chat + demo piece (risk before volume)
+───────────────────────────────────────────────────────────────────
+
+Problem solved
+  A buyer who rejects a large unseen lot leaves the artisan with dead stock
+  and lost time. A demo first is how humans already trade; the app only
+  makes that step unskippable before Confirm.
+
+Flow in the product
+  Artisan opens chat on a demand (with their pile).
+  Sends demo: colour, small quantity, optional photo.
+  Buyer Accept → quantity locked for that demand; booking/confirm unlock path.
+  Buyer Reject → pile remains available; another buyer can still take it.
+  “No stock wasted” is a product promise of pooling, not a magic same-day sale.
+
+What judges should hear
+  “We force a sample handshake before the big number becomes money.”
+
+───────────────────────────────────────────────────────────────────
+7.2 Money pool (the anti-udhaar spine)
+───────────────────────────────────────────────────────────────────
+
+Problem solved
+  Udhaar — payment delayed or denied after goods leave the home — is the
+  wound artisans name most often. A marketplace that only matches SKUs but
+  leaves payment as a handshake outside the system has not finished the job.
+
+What the prototype proves (logic, not banking licence)
+  Booking (~25%) — skin in the game; reduces idle enquiries.
+  Confirm → remaining value sits in the visible pool.
+  QC gate — release follows accepted pieces only.
+  Reject path — buyer-side returned amount for rejected quantity.
+  Family payout lines use accepted × artisan unit rate, minus co-op fee %.
+
+Rates live in starter data (buyer unit price, artisan unit price,
+booking percent, co-op fee percent). The UI says Money / पैसा — not a fake
+GPay. Verbal honesty to judges: simulated ledger.
+
+What judges should hear
+  “We are not a bank. We are a transparent notebook that only opens the
+   artisan’s share after quality, and returns what failed.”
+
+───────────────────────────────────────────────────────────────────
+7.3 Map + distance preference (meet the nearest fit)
+───────────────────────────────────────────────────────────────────
+
+Problem solved
+  Even correct colour piles should not ignore geography. Collection cost,
+  trust, and time all shrink when matching homes are nearby.
+
+What the product does
+  Locality pins around the mandi; list sorted by demo km.
+  Buyer IN feed sorts matching piles by that same nearness.
+  Spec still vetoes a nearer wrong pile. Distance never promotes a mismatch.
+
+What judges should hear
+  “First the glass must match. Then the shortest road wins.”
+
+───────────────────────────────────────────────────────────────────
+7.4 Producer reliability score (trust that compounds)
+───────────────────────────────────────────────────────────────────
+
+Problem solved
+  Buyers fear unknown homes. Artisans with careful QC deserve a visible edge.
+  A score on the bio and on each proposal row makes quality socially legible.
+
+What the product does
+  Badge on artisan home and buyer stock rows.
+  Seed scores until QC exists; then QC ratio drives the number.
+  Family 1 starts strong; Family 3 starts lower (blue / reject story).
+
+What judges should hear
+  “Reputation is earned in accepted pieces, not in profile poetry.”
+
+═══════════════════════════════════════════════════════════════════
+8. COLLECTOR AND MONEY STAFF PATH
+═══════════════════════════════════════════════════════════════════
+
+Collector (/pickup) — three large steps
+  1. Which pile (family + colour + declared pieces)
+  2. Numbers: collected / good / broken
+  3. Save — QC writes into the shared collector map so pool + score refresh
+
+Money (/money)
+  Pool cards per demand
+  Released list: families paid on accepted pieces
+
+This closes the loop from feed → demo → booking → confirm → QC → release.
+
+═══════════════════════════════════════════════════════════════════
+9. END-TO-END DEMO SCRIPT (CLICK PATH)
+═══════════════════════════════════════════════════════════════════
+
+  1. Open https://kanch-net.vercel.app (or localhost:3000). Code 1234.
+  2. Login 9000000001 (Family 1). Show craft dropdown: pottery/textile locked.
+  3. Post red stock (or use starter red pile). Show buyer demand ORD-001 on feed.
+  4. Open Chat on that demand. Send a red demo piece.
+  5. Log out. Login 9000000030 (Buyer).
+  6. Show IN feed (red, nearer first) and OUT (blue + reason).
+  7. Open the chat. Accept demo → quantity locks.
+  8. Pay booking → Confirm into pool.
+  9. Log out. Login 9000000010 (Collector). QC Family 1: some good, some broken.
+ 10. Open Money. Point at Released for accepted pieces; Returned logic for reject.
+ 11. Optional: /map for nearness pins; reliability badges on artisan/buyer rows.
+
+One blue OUT story (Family 3 / blue stock) is enough to prove the matcher
+is not a yes-machine.
+
+═══════════════════════════════════════════════════════════════════
+10. INFORMATION ARCHITECTURE (ROUTES THAT EXIST)
+═══════════════════════════════════════════════════════════════════
+
+  /            Login
+  /artisan     Artisan home (stock + demands + score)
+  /buyer       Buyer home (demand + feeds + pool card)
+  /chat        Demo-piece conversation
+  /map         Nearness map + locality list
+  /pickup      Collector QC
+  /money       Pool + release notebook
+  /matching    Staff IN/OUT (coordinator)
+  /phone       Older Person A phone surface (still in repo; main artisan
+               story is /artisan)
+
+Shared lead-owned glue (import, do not fork):
+  lib/store.ts      piles, demands, chat, pools, collector QC key
+  lib/match.ts      IN/OUT rules
+  lib/pool.ts       booking / pool / release view model
+  lib/score.ts      reliability
+  lib/places.ts     demo km + map pins
+  lib/settlement.ts accepted-qty rupees
+  data/starter-list.json   users, ORD-001, starter piles
+
+═══════════════════════════════════════════════════════════════════
+11. MVP ADDITIONS (LOCKED — NOT LIVE YET)
+═══════════════════════════════════════════════════════════════════
+
+These three onboarding facts are mandatory for the next MVP cut.
+They are product requirements for trust and collection geography.
+They are not in the current Vercel / localhost demo screens.
+
+───────────────────────────────────────────────────────────────────
+11.1 GST number — buyer verification
+───────────────────────────────────────────────────────────────────
+
+Who
+  Wholesale / firm buyers (buyer role).
+
+What
+  Buyer must enter GSTIN during onboarding or before raising a demand
+  that can enter the money-pool path.
+
+Why
+  Separates a real trading firm from a time-passer phone.
+  Gives the cooperative a verifiable commercial identity for the lot.
+  Supports later invoice / settlement paperwork with a licensed partner.
+
+MVP rules
+  • Field is required for buyer accounts that post demand.
+  • Format check for GSTIN pattern in the UI (basic validation).
+  • Store as firm identity on the buyer profile; show masked on public feeds
+    if shown at all (full number for cooperative staff only).
+  • Live demo today: not collected. Pitch line: “Next MVP — GST on buyer.”
+
+───────────────────────────────────────────────────────────────────
+11.2 Aadhaar number — artisan identity
+───────────────────────────────────────────────────────────────────
+
+Who
+  Household artisans (artisan role).
+
+What
+  Artisan must register Aadhaar (or Aadhaar-linked verification via an
+  authorised partner flow) as part of joining the cooperative path.
+
+Why
+  One household = one accountable producer for batch ownership and payout.
+  Reduces duplicate / ghost seller accounts on the artisan feed.
+  Ties reliability score and settlement lines to a real person/household.
+
+MVP rules (honest + lawful)
+  • Required at artisan onboarding before stock can enter a paid lot.
+  • Prefer OTP / partner KYC verification over storing full number in plain
+    text on a student laptop; if stored in prototype, mask on screen
+    (show last 4 only) and never print full Aadhaar on buyer feeds.
+  • Cooperative staff may see verification status: Verified / Pending.
+  • Live demo today: not collected. Pitch line: “Next MVP — Aadhaar for
+    artisan join; we verify, we do not splash the number on the bazaar feed.”
+
+Legal posture for judges
+  Kanch-Net is not claiming UIDAI API access in the student build.
+  MVP means the product requires artisan identity; implementation may use
+  an authorised verification partner when the cooperative goes live.
+
+───────────────────────────────────────────────────────────────────
+11.3 Location — firm location (buyer) + manufacturing unit (artisan)
+───────────────────────────────────────────────────────────────────
+
+Who / what (both sides — must enter)
+
+  Buyer
+    Firm location (office / godown / mandi desk where the lot is received
+    or managed). Mandatory on buyer profile.
+
+  Artisan
+    Manufacturing unit location — jahaan bhi unit ho, wahi ki location.
+    Not “somewhere in Firozabad” as free vibes: a concrete place the
+    collector can reach. Mandatory before stock can be offered into a
+    matched lot.
+
+Why
+  Nearness ranking and the map only work if both sides declare where they
+  actually are. Collection cost, trust visits, and “shortest road after
+  spec match” all depend on real unit / firm pins.
+  Without unit location, distance preference is theatre.
+
+MVP rules
+  • Required fields on both onboarding forms.
+  • Capture locality + pin (map pick or typed address + geo).
+  • Artisan manufacturing unit location feeds /map pins and km sort.
+  • Buyer firm location anchors the hub side of distance (or sits beside
+    the shared mandi hub if the firm receives at mandi).
+  • Cannot post stock (artisan) or raise a pool-eligible demand (buyer)
+    until location is saved.
+  • Live demo today: seed localities in data (Ramnagar, Suhag Nagar, …)
+    stand in for this. Pitch line: “Next MVP — every artisan types their
+    unit location; every buyer types firm location. No blank geography.”
+
+───────────────────────────────────────────────────────────────────
+11.4 How Section 11 sits on the basic product
+───────────────────────────────────────────────────────────────────
+
+  Login still opens two homes.
+  Craft dropdown, stock ↔ demand feeds, spec-then-near match, demo chat,
+  money pool, map, and reliability stay as built.
+  Section 11 hardens who may use those homes:
+    verified buyer (GST + firm location),
+    verified artisan (Aadhaar + manufacturing unit location),
+    then the same trust layers (demo → booking → pool → QC → release).
+
+═══════════════════════════════════════════════════════════════════
+12. NON-GOALS (SAY NO OUT LOUD)
+═══════════════════════════════════════════════════════════════════
+
+  • Claiming GST / Aadhaar / unit–firm location are already live on the demo
+  • Real UPI / escrow licence / holding customer funds in production today
+  • AI vision matching of bangle photos
+  • Live pottery or textile selling in this SIH cut
+  • Guaranteeing same-day resale of every rejected demo
+  • Claiming FastAPI + Postgres sync across three phones today
+  • A national ONDC catalogue rebuild
+  • Showing full Aadhaar numbers on public buyer feeds
+
+Future partners may carry payments and regulated KYC.
+This prototype already carries the rules, the feeds, and the trust
+choreography; Section 11 is the identity + geography bolt-on for MVP.
+
+═══════════════════════════════════════════════════════════════════
+13. SUCCESS FOR SIH (HOW WE KNOW THE DEMO WORKED)
+═══════════════════════════════════════════════════════════════════
+
+Live demo today
+  □ Judge understands two homes after one login
+  □ Judge sees pottery/textile as (making in process)
+  □ Judge sees stock ↔ demand cross feeds
+  □ Judge sees OUT reason for a wrong colour
+  □ Judge sees nearer match ranked above farther match among INs
+  □ Judge sees demo Accept before Confirm
+  □ Judge sees booking → pool → QC → release / return
+  □ Judge sees reliability on artisan + buyer rows
+  □ Team never claims real money moved
+
+When pitching MVP next (Section 11)
+  □ Judge hears GST for buyer verification
+  □ Judge hears Aadhaar for artisan join (masked / partner-verified)
+  □ Judge hears mandatory firm location + manufacturing unit location
+
+═══════════════════════════════════════════════════════════════════
+14. CLOSING PRINCIPLE
+═══════════════════════════════════════════════════════════════════
+
+Kanch-Net is simple on purpose.
+
+One door.
+Two homes.
+Stock and demand that see each other.
+Match the glass, then shorten the road.
+Show a piece before you lock a thousand.
+Hold money in a clear pool until quality says yes.
+Let a family’s score rise only when their glass does.
+
+Then harden the door:
+  buyers with GST and a firm place,
+  artisans with verified identity and a real unit on the map.
+
+That is the product — a clickable notebook for a craft city, with a clear
+next MVP that makes every account and every kilometre accountable.
+
+═══════════════════════════════════════════════════════════════════
+END OF PRD (AS BUILT + MVP ADDITIONS)
+═══════════════════════════════════════════════════════════════════

@@ -3,9 +3,13 @@ Do not edit another person's folder.
 
 Lead (Cursor) owns:
 - app/page.tsx (login)
+- app/artisan/
+- app/buyer/
+- app/chat/
+- app/map/
 - data/starter-list.json
 - lib/
-- components/AppHeader.tsx, LoginForm.tsx, NeedLogin.tsx
+- components/ (shared UI: AppHeader, LoginForm, NeedLogin, ChatPanel, PoolCard, ScoreBadge, FirozabadMap, …)
 - README.md
 
 Person A (Antigravity) owns:
@@ -17,6 +21,10 @@ Person B (Antigravity) owns:
 Person C (Antigravity) owns:
 - app/pickup/
 - app/money/
+
+Shared keys (do not fork):
+- localStorage `kanch-person-c-batches` — Person C writes QC; lead `lib/store` + pool/score read it
+- localStorage piles/demands/chat/pools — lead `lib/store.ts`
 
 Before you work: Pull (see team-guide/09-CHATGPT-ZERO-SETUP.txt).
 After you work: Push only your folder.

@@ -2,30 +2,27 @@ import LoginForm from "@/components/LoginForm";
 
 export default function HomePage() {
   return (
-    <main className="mx-auto flex min-h-screen max-w-md flex-col justify-center px-5 py-10">
-      <p className="text-sm font-semibold tracking-wide text-[#8b1e14]">
-        FIROZABAD GLASS
-      </p>
-      <h1 className="mt-2 text-4xl font-bold">Kanch-Net</h1>
-      <p className="mt-3 text-[#5c4638]">
-        Small home piles become one matching buyer order. This is a student demo.
-        Money on later screens is fake.
-      </p>
-      <div className="mt-8 rounded-3xl border border-[#ead9c4] bg-white p-5 shadow-sm">
-        <p className="mb-4 text-sm text-[#5c4638]">
-          Code is always <strong>1234</strong>
+    <main className="kn-shell mx-auto flex min-h-screen max-w-md flex-col">
+      <div className="kn-login-arch">
+        <span className="kn-float-orb kn-float-red" aria-hidden />
+        <span className="kn-float-orb kn-float-blue" aria-hidden />
+        <h1 className="kn-wordmark relative">Kanch-Net</h1>
+        <p className="relative mt-4 max-w-[16rem] text-lg leading-snug text-[#f6efe4]/90">
+          Stock. Need. Match.
         </p>
-        <LoginForm />
       </div>
-      <div className="mt-6 space-y-1 text-sm text-[#5c4638]">
-        <p className="font-semibold text-[#2a1810]">
-          Fake demo phones. Type one in the box above, then press Enter.
-        </p>
-        <p>9000000001 = Family 1 (home worker phone page)</p>
-        <p>9000000003 = Family 3, the blue pile that should be rejected</p>
-        <p>9000000010 = Collector (pickup page)</p>
-        <p>9000000020 = Coordinator (matching page)</p>
-        <p>9000000030 = Buyer (matching page)</p>
+      <div className="flex flex-1 flex-col justify-center px-6 py-10">
+        <LoginForm />
+        <details className="kn-help mt-10 text-[#5c4638]">
+          <summary>Demo help</summary>
+          <div className="mt-3 space-y-2 text-base">
+            <p>9000000001 Ramesh — artisan</p>
+            <p>9000000003 Imran — artisan (blue stock)</p>
+            <p>9000000030 Buyer</p>
+            <p>9000000010 Collector — pickup</p>
+            <p>9000000020 Coordinator — staff matching</p>
+          </div>
+        </details>
       </div>
     </main>
   );

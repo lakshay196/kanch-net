@@ -23,6 +23,10 @@ export default function NeedLogin({
     setUser(session);
   }, [router]);
 
+  if (user === undefined) {
+    return <p className="p-6 text-[#5c4638]">Opening login…</p>;
+  }
+
   if (!user) {
     return <p className="p-6 text-[#5c4638]">Opening login…</p>;
   }

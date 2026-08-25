@@ -23,24 +23,24 @@
       "code": "1234",
       "role": "artisan",
       "householdId": "HH-01",
-      "name": "Family 1",
-      "home": "/phone"
+      "name": "Ramesh",
+      "home": "/artisan"
     },
     {
       "phone": "9000000002",
       "code": "1234",
       "role": "artisan",
       "householdId": "HH-02",
-      "name": "Family 2",
-      "home": "/phone"
+      "name": "Suresh",
+      "home": "/artisan"
     },
     {
       "phone": "9000000003",
       "code": "1234",
       "role": "artisan",
       "householdId": "HH-03",
-      "name": "Family 3",
-      "home": "/phone"
+      "name": "Imran",
+      "home": "/artisan"
     },
     {
       "phone": "9000000010",
@@ -64,7 +64,7 @@
       "role": "buyer",
       "householdId": null,
       "name": "Buyer",
-      "home": "/matching"
+      "home": "/buyer"
     }
   ],
   "piles": [
